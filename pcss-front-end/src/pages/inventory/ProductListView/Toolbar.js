@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 const Toolbar = ({ className, ...rest }) => {
 
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
 
   return (
     <div
@@ -57,9 +58,9 @@ const Toolbar = ({ className, ...rest }) => {
           <CardContent>
             <Box maxWidth={500} display="flex">
               <Button aria-label="filter list" className={classes.button} 
-              // onClick={
-       
-              // }
+              onClick={
+                () => {setOpen(!open)}
+              }
               >
                   <FilterListIcon /> Filter
               </Button>
@@ -85,8 +86,8 @@ const Toolbar = ({ className, ...rest }) => {
           </CardContent>
         </Card>
       </Box>
-      {/* {
-        isFilterButtonClick ? (
+      {
+        open ? (
           <Box mt={3}>
           <Card>
             <CardContent>
@@ -97,7 +98,7 @@ const Toolbar = ({ className, ...rest }) => {
         ) : (
           <div></div>
         )
-      } */}
+      }
     
     </div>
   );

@@ -5,6 +5,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import EnhancedTable from './EnhancedTable';
+import CollapsibleTable from './CollapsibleTable';
 import Toolbar from './Toolbar';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +27,8 @@ const ProductListView = () => {
       <Container maxWidth={false}>
         <Toolbar />
         <Box mt={3}>
-          <EnhancedTable />
+          {/* <EnhancedTable /> */}
+          <CollapsibleTable />
         </Box>
       </Container>
     </div>

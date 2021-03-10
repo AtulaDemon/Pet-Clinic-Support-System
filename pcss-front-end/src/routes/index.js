@@ -12,7 +12,9 @@ function Routes() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
-
+    //view login screen
+    // const isUserLoggedIn = false;
+    //view dashboard screen
     const isUserLoggedIn = true;
     return isUserLoggedIn ? <PrivateSection /> : <PublicRoutes />;
 }

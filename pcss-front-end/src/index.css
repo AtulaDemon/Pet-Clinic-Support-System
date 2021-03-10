@@ -69,6 +69,10 @@ select {
     font: inherit;
 }
 
+div, p, a, span, td, th, button {
+    font-family: Muli!important;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     * {

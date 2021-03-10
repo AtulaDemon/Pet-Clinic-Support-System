@@ -2,13 +2,14 @@ import React from 'react';
 import { Container, Grid, makeStyles } from '@material-ui/core';
 import ProductPhotos from './ProductPhotos';
 import ProductDetails from './ProductDetails';
-
+import ProductInventoryTable from './ProductInventoryTable';
 const useStyles = makeStyles({
     root: {
         minHeight: '100%'
     },
     margin: {
-        marginTop: '10px'
+        marginTop: '10px',
+        marginBottom: '10px'
     }
 });
 
@@ -27,6 +28,8 @@ const ProductDetailsView = () => {
                     <ProductPhotos />
                 </Grid>
             </Grid>
+            <ProductInventoryTable />
+
         </Container>
     );
 };

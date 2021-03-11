@@ -4,6 +4,7 @@ const VNLABELS = {
     LABEL_COMMON_PRODUCT: 'Sản phẩm',
     LABEL_COMMON_SALES_INVOICE: 'Hóa đơn bán hàng',
     LABEL_COMMON_SERVICE_CATALOG: 'Danh mục dịch vụ',
+    LABEL_COMMON_SERVICE_ORDER: 'Hóa đơn dịch vụ',
     LABEL_COMMON_CUSTOMER: 'Khách hàng',
     LABEL_COMMON_HUMAN_RESOURCES: 'Nhân sự',
     LABEL_COMMON_INVENTORY: 'Kho hàng',

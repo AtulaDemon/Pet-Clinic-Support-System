@@ -12,7 +12,6 @@ import {
     makeStyles
 } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-// import { Search as SearchIcon } from 'react-feather';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
 const useStyles = makeStyles((theme) => ({

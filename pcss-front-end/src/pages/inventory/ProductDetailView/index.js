@@ -18,7 +18,7 @@ const ProductDetailsView = () => {
 
     return (
         <Container maxWidth='lg' className={classes.root}>
-            <ProductDetails />
+            <ProductDetails />  
         {/* map to loop photos */}
             <Grid container spacing={3} className={classes.margin}>
                 <Grid item lg={3} md={3} xs={12}>

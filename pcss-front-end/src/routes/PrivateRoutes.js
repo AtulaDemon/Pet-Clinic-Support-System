@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import SLUGS from 'resources/slugs';
 import LoadingComponent from 'components/loading';
 import ProductListView from 'pages/inventory/ProductListView/index';
-import ProductDetailView from 'pages/inventory/ProductDetailView/index';
+import AddProductView from 'pages/inventory/AddProduct/index';
 
 const DashboardComponent = lazy(() => import('./dashboard'));
 
@@ -12,18 +12,34 @@ function PrivateRoutes() {
         <Suspense fallback={<LoadingComponent loading />}>
             <Switch>
                 <Route exact path={SLUGS.dashboard} component={DashboardComponent} />
-                <Route exact path={SLUGS.overviewTwo} render={() => <ProductDetailView />} />
-                <Route exact path={SLUGS.overviewThree} render={() => <div>overviewThree</div>} />
-                <Route exact path={SLUGS.overview} render={() => <ProductListView />} />
-                <Route exact path={SLUGS.tickets} render={() => <div>tickets</div>} />
-                <Route exact path={SLUGS.ideasTwo} render={() => <div>ideasTwo</div>} />
-                <Route exact path={SLUGS.ideasThree} render={() => <div>ideasThree</div>} />
-                <Route exact path={SLUGS.ideas} render={() => <div>ideas</div>} />
-                <Route exact path={SLUGS.contacts} render={() => <div>contacts</div>} />
-                <Route exact path={SLUGS.agents} render={() => <div>agents</div>} />
-                <Route exact path={SLUGS.articles} render={() => <div>articles</div>} />
-                <Route exact path={SLUGS.settings} render={() => <div>settings</div>} />
-                <Route exact path={SLUGS.subscription} render={() => <div>subscription</div>} />
+                <Route exact path={SLUGS.createWarehouseEntry} render={() => <div>createWarehouseEntry</div> }/>
+                <Route exact path={SLUGS.addNewProduct} render={() => <AddProductView />} />
+                <Route exact path={SLUGS.productList} render={() => <ProductListView />} />
+                <Route exact path={SLUGS.product} render={() => <ProductListView />} />
+
+                <Route exact path={SLUGS.salesInvoice} render={() => <div>salesInvoiceList</div>} />
+                <Route exact path={SLUGS.salesInvoiceList} render={() => <div>salesInvoiceList</div>} />
+                <Route exact path={SLUGS.createSalesInvoice} render={() => <div>createSalesInvoice</div>} />
+
+                <Route exact path={SLUGS.serviceCatalog} render={() => <div>serviceList</div>} />
+                <Route exact path={SLUGS.serviceList} render={() => <div>serviceList</div>} />
+                <Route exact path={SLUGS.createNewService} render={() => <div>createNewService</div>} />
+
+                <Route exact path={SLUGS.serviceOrder} render={() => <div>pendingService</div>} />
+                <Route exact path={SLUGS.createServiceOrder} render={() => <div>createServiceOrder</div>} />
+                <Route exact path={SLUGS.medicalRecord} render={() => <div>medicalRecord</div>} />
+                <Route exact path={SLUGS.serviceHistory} render={() => <div>serviceHistory</div>} />
+                <Route exact path={SLUGS.pendingService} render={() => <div>pendingService</div>} />
+                <Route exact path={SLUGS.serviceSchedule} render={() => <div>serviceSchedule</div>} />
+
+                <Route exact path={SLUGS.customer} render={() => <div>customerList</div>} />
+                <Route exact path={SLUGS.customerList} render={() => <div>customerList</div>} />
+                <Route exact path={SLUGS.createCustomerAccount} render={() => <div>createCustomerAccount</div>} />
+                
+                <Route exact path={SLUGS.humanResources} render={() => <div>employeeList</div>} />
+                <Route exact path={SLUGS.employeeList} render={() => <div>employeeList</div>} />
+                <Route exact path={SLUGS.addNewEmployee} render={() => <div>addNewEmployee</div>} />
+                
                 <Redirect to={SLUGS.dashboard} />
             </Switch>
         </Suspense>

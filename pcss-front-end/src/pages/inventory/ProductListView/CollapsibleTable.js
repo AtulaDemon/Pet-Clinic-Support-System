@@ -15,6 +15,7 @@ import Paper from '@material-ui/core/Paper';
 import { Link } from '@material-ui/core';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import VNLABELS from 'resources/vnlabels';
 
 const useRowStyles = makeStyles({
   root: {
@@ -22,6 +23,9 @@ const useRowStyles = makeStyles({
       borderBottom: 'unset',
     },
   },
+  linkPadding: {
+    paddingRight: '10px'
+  }
 });
 
 function createData(name, calories, fat, carbs, protein, price) {
@@ -60,8 +64,8 @@ function Row(props) {
         <TableCell align="right">{row.carbs}</TableCell>
         <TableCell align="right">{row.protein}</TableCell>
         <TableCell align="right">
-          <Link component="button" variant="body2"className={classes.linkPadding}> Edit </Link>
-          <Link component="button" variant="body2" > View Detail </Link>
+          <Link component="button" variant="body2"className={classes.linkPadding}> {VNLABELS.LABEL_LINK_BUTTON_EDIT} </Link>
+          <Link component="button" variant="body2" > {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL} </Link>
         </TableCell>
         
         

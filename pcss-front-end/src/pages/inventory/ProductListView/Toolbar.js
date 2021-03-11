@@ -11,6 +11,7 @@ import {
     SvgIcon,
     makeStyles
 } from '@material-ui/core';
+import VNLABELS from 'resources/vnlabels';
 import SearchIcon from '@material-ui/icons/Search';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
@@ -34,7 +35,7 @@ const Toolbar = ({ className, ...rest }) => {
                 <Button className={classes.button}>Import</Button>
                 <Button className={classes.button}>Export</Button>
                 <Button color='primary' variant='contained'>
-                    Add customer
+                    {VNLABELS.LABEL_INVENTORY_ADD_NEW_PRODUCT}
                 </Button>
             </Box>
             <Box mt={3}>
@@ -48,7 +49,7 @@ const Toolbar = ({ className, ...rest }) => {
                                     setOpen(!open);
                                 }}
                             >
-                                <FilterListIcon /> Filter
+                                <FilterListIcon /> {VNLABELS.LABEL_FILTER}
                             </Button>
                             <TextField
                                 fullWidth
@@ -62,7 +63,7 @@ const Toolbar = ({ className, ...rest }) => {
                                         </InputAdornment>
                                     )
                                 }}
-                                placeholder='Search customer'
+                                placeholder={[VNLABELS.LABEL_SEARCH + ' ' + VNLABELS.LABEL_COMMON_PRODUCT]}
                                 variant='outlined'
                             />
                         </Box>

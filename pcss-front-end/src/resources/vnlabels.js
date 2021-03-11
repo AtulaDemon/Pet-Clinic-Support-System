@@ -15,7 +15,6 @@ const VNLABELS = {
     LABEL_INVENTORY_CREATE_INVENTORY_ENTRY_FORM: 'Tạo phiếu nhập kho',
 
 
-
     //SALES INVOICE = SI
     //Hóa đơn bán hàng = HĐBH
     LABEL_SI_SALES_INVOICE_LIST: 'Danh sách HĐBH',
@@ -41,8 +40,18 @@ const VNLABELS = {
 
     //HUMAN RESOURCES = HR
     LABEL_HR_EMPLOYEE_LIST: 'Danh sách nhân viên',
-    LABEL_HR_ADD_NEW_EMPLOYEE: 'Thêm nhân viên'
+    LABEL_HR_ADD_NEW_EMPLOYEE: 'Thêm nhân viên',
     
+    //TABLE
+    LABEL_TABLE_HEAD_EDIT_INFO: 'Xem thông tin',
+
+    //LINK BUTTON
+    LABEL_LINK_BUTTON_EDIT: 'Sửa',
+    LABEL_LINK_BUTTON_VIEW_DETAIL: 'Xem thêm',
+
+    //TOOLBAR
+    LABEL_SEARCH: 'Tìm kiếm',
+    LABEL_FILTER: 'Lọc',
 
 
 } 

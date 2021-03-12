@@ -13,6 +13,7 @@ const VNLABELS = {
     LABEL_INVENTORY_PRODUCT_LIST: 'Danh sách sản phẩm',
     LABEL_INVENTORY_ADD_NEW_PRODUCT: 'Thêm sản phẩm mới',
     LABEL_INVENTORY_CREATE_INVENTORY_ENTRY_FORM: 'Tạo phiếu nhập kho',
+    LABEL_INVENTORY_PRODUCT_DETAIL: 'Chi tiết sản phẩm',
 
 
     //SALES INVOICE = SI

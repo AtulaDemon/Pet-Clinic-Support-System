@@ -9,7 +9,13 @@ import {
     TextField,
     InputAdornment,
     SvgIcon,
-    makeStyles
+    makeStyles,
+    withStyles,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem,
+    InputBase 
 } from '@material-ui/core';
 import VNLABELS from 'resources/vnlabels';
 import SearchIcon from '@material-ui/icons/Search';
@@ -22,6 +28,58 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+const states = [
+    {
+        value: 'alabama',
+        label: 'Alabama'
+    },
+    {
+        value: 'new-york',
+        label: 'New York'
+    },
+    {
+        value: 'san-francisco',
+        label: 'San Francisco'
+    }
+];
+
+const Filter = () => {
+    const classes = useStyles();
+
+
+    // const handleChange = (event) => {
+    //     setValues({
+    //         ...values,
+    //         [event.target.name]: event.target.value
+    //     });
+    // };
+
+    return (
+        <Box mt={3}>
+            <Card>
+                <CardContent>
+                <TextField
+                            fullWidth
+                            label='Select State'
+                            name='state'
+                            // onChange={handleChange}
+                            required
+                            select
+                            SelectProps={{ native: true }}
+                            // value={values.state}
+                            variant='outlined'
+                        >
+                            {states.map((option) => (
+                                <option key={option.value} value={option.value}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </TextField>
+                </CardContent>
+            </Card>
+        </Box>
+    );
+};
 const Toolbar = ({ className, ...rest }) => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
@@ -63,22 +121,16 @@ const Toolbar = ({ className, ...rest }) => {
                                         </InputAdornment>
                                     )
                                 }}
-                                placeholder={[VNLABELS.LABEL_SEARCH + ' ' + VNLABELS.LABEL_COMMON_PRODUCT]}
+                                placeholder={[
+                                    VNLABELS.LABEL_SEARCH + ' ' + VNLABELS.LABEL_COMMON_PRODUCT
+                                ]}
                                 variant='outlined'
                             />
                         </Box>
                     </CardContent>
                 </Card>
             </Box>
-            {open ? (
-                <Box mt={3}>
-                    <Card>
-                        <CardContent>Filter</CardContent>
-                    </Card>
-                </Box>
-            ) : (
-                <div></div>
-            )}
+            {open ? <Filter /> : <div></div>}
         </div>
     );
 };

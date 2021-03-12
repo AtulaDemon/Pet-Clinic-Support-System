@@ -4,6 +4,7 @@ import SLUGS from 'resources/slugs';
 import LoadingComponent from 'components/loading';
 import ProductListView from 'pages/inventory/ProductListView/index';
 import AddProductView from 'pages/inventory/AddProduct/index';
+import CustomerListView from 'pages/customer/CustomerListView/index';
 
 const DashboardComponent = lazy(() => import('./dashboard'));
 
@@ -32,8 +33,8 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.pendingService} render={() => <div>pendingService</div>} />
                 <Route exact path={SLUGS.serviceSchedule} render={() => <div>serviceSchedule</div>} />
 
-                <Route exact path={SLUGS.customer} render={() => <div>customerList</div>} />
-                <Route exact path={SLUGS.customerList} render={() => <div>customerList</div>} />
+                <Route exact path={SLUGS.customer} render={() => <div>customer</div>}/>
+                <Route exact path={SLUGS.customerList} render={() => <CustomerListView/> } />
                 <Route exact path={SLUGS.createCustomerAccount} render={() => <div>createCustomerAccount</div>} />
                 
                 <Route exact path={SLUGS.humanResources} render={() => <div>employeeList</div>} />

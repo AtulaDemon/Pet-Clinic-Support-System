@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   Box,
   Container,
   makeStyles
 } from '@material-ui/core';
-import CustomerTable from './CustomerTable';
-// import Toolbar from './Toolbar';
+import EnhancedTable from './EnhancedTable';
+import Toolbar from './Toolbar';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,22 +18,31 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const CustomerListView = () => {
-  const classes = useStyles();
-  return (
-    <div
-      className={classes.root}
-      title="Customers"
-    >
-      <Container maxWidth={false}>
-        {/* <Toolbar /> */}
-        <Box mt={3}>
-          <CustomerTable />
-          {/* <CollapsibleTable /> */}
-        </Box>
-      </Container>
-    </div>
-  );
+const mapStateToProps = state => {
+  return {
+    customers: state.customers
+  }
+}
+
+class CustomerListView extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div title="Customers">
+        <Container maxWidth={false}>
+          <Toolbar />
+          <Box mt={3}>
+            <EnhancedTable customers={this.props.customers} />
+            {/* <CollapsibleTable /> */}
+          </Box>
+        </Container>
+      </div>
+    );
+  }
 };
 
-export default CustomerListView;
+export default withRouter(connect(mapStateToProps)(CustomerListView));

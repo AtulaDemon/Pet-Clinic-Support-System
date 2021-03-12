@@ -4,11 +4,7 @@ import { useHistory } from 'react-router-dom';
 import SLUGS from 'resources/slugs';
 import VNLABELS from 'resources/vnlabels'
 import {
-    IconAgents,
-    IconContacts,
     IconLogout,
-    IconArticles,
-    IconTickets,
     IconCatalog,
     IconCube,
     IconDashboard,

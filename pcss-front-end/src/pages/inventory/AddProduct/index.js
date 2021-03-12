@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Grid, makeStyles } from '@material-ui/core';
-
+import { Container, makeStyles, Typography } from '@material-ui/core';
+import VNLABELS from 'resources/vnlabels';
 import ProductForm from './ProductForm';
 const useStyles = makeStyles({
     root: {
@@ -9,6 +9,9 @@ const useStyles = makeStyles({
     margin: {
         marginTop: '10px',
         marginBottom: '10px'
+    },
+    headTitle: {
+      marginBottom: '50px',
     }
 });
 
@@ -17,10 +20,10 @@ const ProductDetailsView = () => {
 
     return (
         <Container maxWidth='lg' className={classes.root}>
-            <ProductForm />  
-{/*  
-            <ProductInventoryTable /> */}
-
+            <Typography variant='h5' component='div' className={classes.headTitle}>
+                {VNLABELS.LABEL_INVENTORY_ADD_NEW_PRODUCT}
+            </Typography>
+            <ProductForm />
         </Container>
     );
 };

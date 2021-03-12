@@ -147,7 +147,7 @@ export default function CollapsibleTable() {
             <TableCell align="right">Fat&nbsp;(g)</TableCell>
             <TableCell align="right">Carbs&nbsp;(g)</TableCell>
             <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            <TableCell align="right">Edit Infomation</TableCell>
+            <TableCell align="right">{VNLABELS.LABEL_TABLE_HEAD_EDIT_INFO}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

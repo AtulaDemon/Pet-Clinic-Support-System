@@ -5,11 +5,19 @@ import {
     Card,
     CardContent,
     CardHeader,
+    Button,
+    Box,
     Divider,
     Grid,
     TextField,
-    makeStyles
+    makeStyles,
+    TextareaAutosize,
+    FormLabel,
+    Radio,
+    RadioGroup,
+    FormControlLabel,
 } from '@material-ui/core';
+import UploadImage from './UploadImage';
 
 const states = [
     {
@@ -41,6 +49,8 @@ const ProfileForm = ({ className, ...rest }) => {
         country: 'USA'
     });
 
+    const [value, setValueRadio] = React.useState('true');
+
     const handleChange = (event) => {
         setValues({
             ...values,
@@ -48,76 +58,65 @@ const ProfileForm = ({ className, ...rest }) => {
         });
     };
 
+    const handleChangeRadio = (event) => {
+        setValueRadio(event.target.value);
+      };
+    
+
     return (
         <Card className={clsx(classes.root, className)} {...rest}>
-            <CardHeader subheader='' title='Product' />
-            <Divider />
             <CardContent>
                 <Grid container spacing={3}>
                     <Grid item md={6} xs={12}>
                         <TextField
                             fullWidth
                             helperText='Please specify the first name'
-                            label='First name'
+                            label='Tên sản phẩm'
                             name='firstName'
                             onChange={handleChange}
                             required
                             value={values.firstName}
                             variant='outlined'
-                            InputProps={{
-                                readOnly: true
-                            }}
                         />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField
-                            fullWidth
-                            label='Last name'
-                            name='lastName'
+                        <FormLabel component='legend'>Trạng thái</FormLabel>
+                        <RadioGroup
+                            aria-label='Trạng thái'
+                            name='status'
+                            value={value}
+                            onChange={handleChangeRadio}
+                            display='flex'
+                            align-items = 'center'
+                        >
+                            <Box>
+                                <FormControlLabel value='true' control={<Radio color="default"/>} label='Hiển thị' />
+                                <FormControlLabel value='false' control={<Radio color="default"/>} label='Ẩn' />
+                            </Box>
+                            
+                        </RadioGroup>
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <TextareaAutosize
                             onChange={handleChange}
-                            required
-                            value={values.lastName}
+                            placeholder='Mô tả chi tiết'
                             variant='outlined'
-                            InputProps={{
-                                readOnly: true
-                            }}
+                            rows={5}
+                            cols={38}
                         />
                     </Grid>
                     <Grid item md={6} xs={12}>
                         <TextField
                             fullWidth
-                            label='Email Address'
-                            name='email'
-                            onChange={handleChange}
-                            required
-                            value={values.email}
-                            variant='outlined'
-                        />
-                    </Grid>
-                    <Grid item md={6} xs={12}>
-                        <TextField
-                            fullWidth
-                            label='Phone Number'
+                            label='Category'
                             name='phone'
                             onChange={handleChange}
                             type='number'
                             value={values.phone}
                             variant='outlined'
                         />
-                    </Grid>
-                    <Grid item md={6} xs={12}>
                         <TextField
-                            fullWidth
-                            label='Country'
-                            name='country'
-                            onChange={handleChange}
-                            required
-                            value={values.country}
-                            variant='outlined'
-                        />
-                    </Grid>
-                    <Grid item md={6} xs={12}>
-                        <TextField
+                            margin='normal'
                             fullWidth
                             label='Select State'
                             name='state'
@@ -135,8 +134,17 @@ const ProfileForm = ({ className, ...rest }) => {
                             ))}
                         </TextField>
                     </Grid>
+                    <Grid item md={6} xs={12}></Grid>
+                    <Grid item md={6} xs={12}></Grid>
                 </Grid>
             </CardContent>
+            <UploadImage />
+            <Divider />
+            <Box display='flex' justifyContent='flex-end' p={2}>
+                <Button color='primary' variant='contained'>
+                    Save details
+                </Button>
+            </Box>
         </Card>
     );
 };

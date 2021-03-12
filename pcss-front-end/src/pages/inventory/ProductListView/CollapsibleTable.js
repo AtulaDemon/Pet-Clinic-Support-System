@@ -12,8 +12,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import { Link } from '@material-ui/core';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import VNLABELS from 'resources/vnlabels';
 
 const useRowStyles = makeStyles({
   root: {
@@ -21,6 +23,9 @@ const useRowStyles = makeStyles({
       borderBottom: 'unset',
     },
   },
+  linkPadding: {
+    paddingRight: '10px'
+  }
 });
 
 function createData(name, calories, fat, carbs, protein, price) {
@@ -58,6 +63,12 @@ function Row(props) {
         <TableCell align="right">{row.fat}</TableCell>
         <TableCell align="right">{row.carbs}</TableCell>
         <TableCell align="right">{row.protein}</TableCell>
+        <TableCell align="right">
+          <Link component="button" variant="body2"className={classes.linkPadding}> {VNLABELS.LABEL_LINK_BUTTON_EDIT} </Link>
+          <Link component="button" variant="body2" > {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL} </Link>
+        </TableCell>
+        
+        
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -136,6 +147,7 @@ export default function CollapsibleTable() {
             <TableCell align="right">Fat&nbsp;(g)</TableCell>
             <TableCell align="right">Carbs&nbsp;(g)</TableCell>
             <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell align="right">Edit Infomation</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

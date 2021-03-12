@@ -5,6 +5,7 @@ import { Row } from 'simple-flexbox';
 import { createUseStyles, useTheme } from 'react-jss';
 import { SidebarContext } from 'hooks/useSidebar';
 import SLUGS from 'resources/slugs';
+import VNLABELS from 'resources/vnlabels';
 import { IconBell, IconSearch } from 'assets/icons';
 import DropdownComponent from 'components/dropdown';
 
@@ -70,29 +71,23 @@ function HeaderComponent() {
         case currentItem === SLUGS.dashboard:
             title = 'Dashboard';
             break;
-        case [SLUGS.overview, SLUGS.overviewTwo, SLUGS.overviewThree].includes(currentItem):
-            title = 'Overview';
+        case [SLUGS.product, SLUGS.productList, SLUGS.addNewProduct, SLUGS.createWarehouseEntry].includes(currentItem):
+            title = VNLABELS.LABEL_COMMON_PRODUCT;
             break;
-        case currentItem === SLUGS.tickets:
-            title = 'Tickets';
+        case [SLUGS.salesInvoice, SLUGS.salesInvoiceList, SLUGS.createSalesInvoice].includes(currentItem):
+            title = VNLABELS.LABEL_COMMON_SALES_INVOICE;
             break;
-        case [SLUGS.ideas, SLUGS.ideasTwo, SLUGS.ideasThree].includes(currentItem):
-            title = 'Ideas';
+        case [SLUGS.serviceCatalog, SLUGS.serviceList, SLUGS.createNewService].includes(currentItem):
+            title = VNLABELS.LABEL_COMMON_SERVICE_CATALOG;
             break;
-        case currentItem === SLUGS.contacts:
-            title = 'Contacts';
+        case [SLUGS.serviceOrder, SLUGS.createServiceOrder, SLUGS.serviceHistory, SLUGS.pendingService, SLUGS.serviceSchedule ].includes(currentItem):
+            title = VNLABELS.LABEL_COMMON_SERVICE_ORDER;
             break;
-        case currentItem === SLUGS.agents:
-            title = 'Agents';
+        case [SLUGS.customer, SLUGS.customerList, SLUGS.createCustomerAccount].includes(currentItem):
+            title = VNLABELS.LABEL_COMMON_CUSTOMER;
             break;
-        case currentItem === SLUGS.articles:
-            title = 'Articles';
-            break;
-        case currentItem === SLUGS.subscription:
-            title = 'Subscription';
-            break;
-        case currentItem === SLUGS.settings:
-            title = 'Settings';
+        case [SLUGS.humanResources, SLUGS.employeeList, SLUGS.addNewEmployee].includes(currentItem):
+            title = VNLABELS.LABEL_COMMON_HUMAN_RESOURCES;
             break;
         default:
             title = '';

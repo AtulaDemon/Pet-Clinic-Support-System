@@ -2,18 +2,20 @@ import React from 'react';
 import {
   Box,
   Container,
-  makeStyles
+  makeStyles,
+  Typography
 } from '@material-ui/core';
 import EnhancedTable from './EnhancedTable';
+import VNLABELS from 'resources/vnlabels';
 import CollapsibleTable from './CollapsibleTable';
 import Toolbar from './Toolbar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: theme.palette.background.dark,
-    // minHeight: '100%',
-    // paddingBottom: theme.spacing(3),
-    // paddingTop: theme.spacing(3)
+    minHeight: '100%'
+  },
+  headTitle: {
+    marginBottom: '50px',
   }
 }));
 
@@ -22,9 +24,11 @@ const ProductListView = () => {
   return (
     <div
       className={classes.root}
-      title="Customers"
     >
       <Container maxWidth={false}>
+        <Typography variant="h5" component="div" className={classes.headTitle}>
+          {VNLABELS.LABEL_INVENTORY_PRODUCT_LIST}
+        </Typography>
         <Toolbar />
         <Box mt={3}>
           {/* <EnhancedTable /> */}

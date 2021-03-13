@@ -16,8 +16,9 @@ import {
     Radio,
     RadioGroup,
     FormControlLabel,
+    Typography,
 } from '@material-ui/core';
-import UploadImage from './UploadImage';
+import { Link } from 'react-router-dom';
 
 const states = [
     {
@@ -34,8 +35,60 @@ const states = [
     }
 ];
 
+
+
+const UploadImage = () => {
+    const classes = useStyles();
+    const [selectedFiles, setSelectedFiles] = useState([]);
+
+    const handleImageChange = (e) => {
+        // console.log(e.target.files[])
+        if (e.target.files) {
+            const filesArray = Array.from(e.target.files).map((file) => URL.createObjectURL(file));
+
+            // console.log("filesArray: ", filesArray);
+
+            setSelectedFiles((prevImages) => prevImages.concat(filesArray));
+            Array.from(e.target.files).map(
+                (file) => URL.revokeObjectURL(file) // avoid memory leak
+            );
+        }
+    };
+
+    const renderPhotos = (source) => {
+		return source.map((photo) => {
+			return (
+            <Grid item lg={3} md={3} xs={12}>
+                <Link><img src={photo} alt="" key={photo}/></Link>
+                <Button>
+                    Xóa
+                </Button>
+            </Grid>
+            );
+		});
+	};
+
+    return (
+        <div>
+            <Typography variant='h6' gutterBottom component='div'>
+                Thêm ảnh
+            </Typography>
+          
+                <input type='file' id='file' multiple onChange={handleImageChange} />
+            <Grid container spacing={3} className={classes.margin}>
+                {renderPhotos(selectedFiles)}
+            </Grid>
+        </div>
+    );
+};
+
+
 const useStyles = makeStyles(() => ({
-    root: {}
+    root: {},
+    margin: {
+        marginTop: '10px',
+        marginBottom: '10px'
+    },
 }));
 
 const ProfileForm = ({ className, ...rest }) => {
@@ -133,13 +186,13 @@ const ProfileForm = ({ className, ...rest }) => {
                                 </option>
                             ))}
                         </TextField>
-                    </Grid>
-                    <Grid item md={6} xs={12}></Grid>
-                    <Grid item md={6} xs={12}></Grid>
+                    </Grid>                  
                 </Grid>
+                <UploadImage />  
             </CardContent>
-            <UploadImage />
+           
             <Divider />
+
             <Box display='flex' justifyContent='flex-end' p={2}>
                 <Button color='primary' variant='contained'>
                     Save details

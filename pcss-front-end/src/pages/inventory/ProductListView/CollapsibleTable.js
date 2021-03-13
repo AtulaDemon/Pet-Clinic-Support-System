@@ -16,6 +16,7 @@ import { Link } from '@material-ui/core';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import VNLABELS from 'resources/vnlabels';
+import ProductDetailsView from '../AddProduct';
 
 const useRowStyles = makeStyles({
   root: {
@@ -64,8 +65,11 @@ function Row(props) {
         <TableCell align="right">{row.carbs}</TableCell>
         <TableCell align="right">{row.protein}</TableCell>
         <TableCell align="right">
-          <Link component="button" variant="body2"className={classes.linkPadding}> {VNLABELS.LABEL_LINK_BUTTON_EDIT} </Link>
-          <Link component="button" variant="body2" > {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL} </Link>
+          <Link component="button" variant="body2" className={classes.linkPadding} 
+          > {VNLABELS.LABEL_LINK_BUTTON_EDIT} </Link>
+          <Link component="button" variant="body2" 
+          to={`/productDetail/`}
+           > {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL} </Link>
         </TableCell>
         
         

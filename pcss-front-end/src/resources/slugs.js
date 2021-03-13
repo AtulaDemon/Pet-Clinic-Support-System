@@ -3,6 +3,7 @@ export default {
     dashboard: '/dashboard',
     product: '/product',
     productList: '/product/productList',
+    productDetail: '/product/productDetail',
     addNewProduct: '/product/addNewProduct',
     createWarehouseEntry: '/product/createWarehouseEntry',
     salesInvoice: '/salesInvoice',

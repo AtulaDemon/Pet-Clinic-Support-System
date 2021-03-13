@@ -9,14 +9,7 @@ import {
     TextField,
     InputAdornment,
     SvgIcon,
-    makeStyles,
-    withStyles,
-    FormControl,
-    InputLabel,
-    Select,
-    MenuItem,
-    InputBase 
-} from '@material-ui/core';
+    makeStyles} from '@material-ui/core';
 import VNLABELS from 'resources/vnlabels';
 import SearchIcon from '@material-ui/icons/Search';
 import FilterListIcon from '@material-ui/icons/FilterList';

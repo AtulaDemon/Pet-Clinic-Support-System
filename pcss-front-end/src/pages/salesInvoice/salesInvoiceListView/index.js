@@ -4,7 +4,7 @@ import {
   Container,
   makeStyles,
 } from '@material-ui/core';
-import CollapsibleTable from './CollapsibleTable';
+import InvoiceTable from './InvoiceTable';
 import Toolbar from './Toolbar';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProductListView = () => {
+const SalesInvoiceList = () => {
   const classes = useStyles();
   return (
     <div
@@ -22,12 +22,11 @@ const ProductListView = () => {
       <Container maxWidth={false}>
         <Toolbar />
         <Box mt={3}>
-          {/* <EnhancedTable /> */}
-          <CollapsibleTable />
+          <InvoiceTable />
         </Box>
       </Container>
     </div>
   );
 };
 
-export default ProductListView;
+export default SalesInvoiceList;

@@ -4,7 +4,9 @@ import SLUGS from 'resources/slugs';
 import LoadingComponent from 'components/loading';
 import ProductListView from 'pages/inventory/ProductListView/index';
 import AddProductView from 'pages/inventory/AddProduct/index';
-import EmployeeListView from 'pages/human-resources/EmployeeListView/index';
+import CustomerListView from 'pages/customer/CustomerListView/index';
+import CreateNewService from 'pages/service/CreateNewService/index';
+
 const DashboardComponent = lazy(() => import('./dashboard'));
 
 function PrivateRoutes() {
@@ -23,7 +25,7 @@ function PrivateRoutes() {
 
                 <Route exact path={SLUGS.serviceCatalog} render={() => <div>serviceList</div>} />
                 <Route exact path={SLUGS.serviceList} render={() => <div>serviceList</div>} />
-                <Route exact path={SLUGS.createNewService} render={() => <div>createNewService</div>} />
+                <Route exact path={SLUGS.createNewService} render={() => <CreateNewService/>} />
 
                 <Route exact path={SLUGS.serviceOrder} render={() => <div>pendingService</div>} />
                 <Route exact path={SLUGS.createServiceOrder} render={() => <div>createServiceOrder</div>} />
@@ -32,8 +34,8 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.pendingService} render={() => <div>pendingService</div>} />
                 <Route exact path={SLUGS.serviceSchedule} render={() => <div>serviceSchedule</div>} />
 
-                <Route exact path={SLUGS.customer} render={() => <div>customerList</div>} />
-                <Route exact path={SLUGS.customerList} render={() => <div>customerList</div>} />
+                <Route exact path={SLUGS.customer} render={() => <div>customer</div>}/>
+                <Route exact path={SLUGS.customerList} render={() => <CustomerListView/> } />
                 <Route exact path={SLUGS.createCustomerAccount} render={() => <div>createCustomerAccount</div>} />
                 
                 <Route exact path={SLUGS.humanResources} render={() => <div><EmployeeListView/></div>} />

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Container, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Container, Grid, makeStyles, } from '@material-ui/core';
 import ProductPhotos from './ProductPhotos';
 import ProductDetails from './ProductDetails';
-import VNLABELS from 'resources/vnlabels';
 import ProductInventoryTable from './ProductInventoryTable';
 const useStyles = makeStyles({
     root: {
@@ -22,9 +21,6 @@ const ProductDetailsView = () => {
 
     return (
         <Container maxWidth='lg' className={classes.root}>
-            <Typography variant='h5' component='div' className={classes.headTitle}>
-                {VNLABELS.LABEL_INVENTORY_PRODUCT_DETAIL}
-            </Typography>
             <ProductDetails />
             {/* map to loop photos */}
             <Grid container spacing={3} className={classes.margin}>

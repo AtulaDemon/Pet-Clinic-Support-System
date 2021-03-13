@@ -137,7 +137,7 @@ function HeaderComponent() {
                         <>
                             <span className={classes.name}>Admin</span>
                             {/* <img
-                                src='../../assets/icons/a.jpg'
+                                src='/src/assets/icons/a.jpg'
                                 alt='avatar'
                                 className={classes.avatar}
                             /> */}

@@ -12,11 +12,11 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import { Link } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import VNLABELS from 'resources/vnlabels';
-import ProductDetailsView from '../AddProduct';
+
 
 const useRowStyles = makeStyles({
   root: {
@@ -65,11 +65,14 @@ function Row(props) {
         <TableCell align="right">{row.carbs}</TableCell>
         <TableCell align="right">{row.protein}</TableCell>
         <TableCell align="right">
-          <Link component="button" variant="body2" className={classes.linkPadding} 
-          > {VNLABELS.LABEL_LINK_BUTTON_EDIT} </Link>
-          <Link component="button" variant="body2" 
-          to={`/productDetail/`}
-           > {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL} </Link>
+          <Link variant="body2" className={classes.linkPadding}
+            
+          > 
+            {VNLABELS.LABEL_LINK_BUTTON_EDIT} 
+          </Link>
+          <Link variant="body2" to='/product/productDetail'> 
+            {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL} 
+          </Link>
         </TableCell>
         
         

@@ -37,7 +37,7 @@ const states = [
 ];
 
 const Filter = () => {
-    const classes = useStyles();
+    // const classes = useStyles();
 
 
     // const handleChange = (event) => {
@@ -114,9 +114,9 @@ const Toolbar = ({ className, ...rest }) => {
                                         </InputAdornment>
                                     )
                                 }}
-                                placeholder={[
+                                placeholder={
                                     VNLABELS.LABEL_SEARCH + ' ' + VNLABELS.LABEL_COMMON_PRODUCT
-                                ]}
+                                }
                                 variant='outlined'
                             />
                         </Box>

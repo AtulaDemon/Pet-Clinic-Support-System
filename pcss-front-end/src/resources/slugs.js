@@ -10,7 +10,7 @@ export default {
     salesInvoiceList: '/salesInvoice/salesInvoiceList',
     createSalesInvoice: '/salesInvoice/createSalesInvoice',
     serviceCatalog: '/serviceCatalog',
-    serviceList: '/serviceCatalog/service/List',
+    serviceList: '/serviceCatalog/serviceList',
     createNewService: '/serviceCatalog/createNewService',
     serviceOrder: '/serviceOrder',
     createServiceOrder: '/serviceOrder/createServiceOrder',
@@ -19,10 +19,10 @@ export default {
     pendingService: '/serviceOrder/pendingService',
     serviceSchedule: '/serviceOrder/serviceSchedule',
     customer: '/customer',
-    customerList: '/customerList',
-    createCustomerAccount: 'customer/createCustomerAccount',
+    customerList: '/customer/customerList',
+    createCustomerAccount: '/customer/createCustomerAccount',
     humanResources: '/employee',
-    employeeList: '/emloyeeList',
+    employeeList: '/employee/emloyeeList',
     addNewEmployee: '/employee/addEmployee',
     
 

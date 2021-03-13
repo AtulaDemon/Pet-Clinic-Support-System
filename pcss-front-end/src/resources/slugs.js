@@ -9,7 +9,7 @@ export default {
     ideasTwo: '/ideas/two',
     ideasThree: '/ideas/three',
     contacts: '/contacts',
-    agents: '/agents',
+    humanresources: '/humanresources',
     articles: '/articles',
     settings: '/settings',
     subscription: '/subscription',

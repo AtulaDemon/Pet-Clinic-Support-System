@@ -8,12 +8,9 @@ import {
     CardContent,
     TextField,
     InputAdornment,
-    makeStyles,
 } from '@material-ui/core';
 import VNLABELS from 'resources/vnlabels';
 import SearchIcon from '@material-ui/icons/Search';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import { spacing } from '@material-ui/system';
 
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 

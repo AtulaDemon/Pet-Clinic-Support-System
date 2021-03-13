@@ -30,7 +30,7 @@ const mapStateToProps = state => {
   }
 }
 
-const CreateNewService = () => {
+const CreateNewServiceOrder = () => {
 
   const classes = useStyles();
 
@@ -57,4 +57,4 @@ const CreateNewService = () => {
   );
 };
 
-export default withRouter(connect(mapStateToProps)(CreateNewService));
+export default withRouter(connect(mapStateToProps)(CreateNewServiceOrder));

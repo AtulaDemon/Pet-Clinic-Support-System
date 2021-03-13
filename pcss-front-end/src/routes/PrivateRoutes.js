@@ -6,7 +6,7 @@ import ProductListView from 'pages/inventory/ProductListView/index';
 import AddProductView from 'pages/inventory/AddProduct/index';
 
 import CustomerListView from 'pages/customer/CustomerListView/index';
-import CreateNewService from 'pages/service/CreateNewServiceOrder/index';
+import CreateNewServiceOrder from 'pages/serviceOrder/CreateNewServiceOrder/index';
 import ProductDetailsView from 'pages/inventory/ProductDetailView/index';
 import SalesInvoiceList from 'pages/salesInvoice/salesInvoiceListView/index';
 
@@ -29,10 +29,10 @@ function PrivateRoutes() {
 
                 <Route exact path={SLUGS.serviceCatalog} render={() => <div>serviceList</div>} />
                 <Route exact path={SLUGS.serviceList} render={() => <div>serviceList</div>} />
-                <Route exact path={SLUGS.createNewService} render={() => <CreateNewService/>} />
+                <Route exact path={SLUGS.createNewService} render={() => <div>createNewService</div>} />
 
                 <Route exact path={SLUGS.serviceOrder} render={() => <div>pendingService</div>} />
-                <Route exact path={SLUGS.createServiceOrder} render={() => <div>createServiceOrder</div>} />
+                <Route exact path={SLUGS.createServiceOrder} render={() => <CreateNewServiceOrder/>} />
                 <Route exact path={SLUGS.medicalRecord} render={() => <div>medicalRecord</div>} />
                 <Route exact path={SLUGS.serviceHistory} render={() => <div>serviceHistory</div>} />
                 <Route exact path={SLUGS.pendingService} render={() => <div>pendingService</div>} />

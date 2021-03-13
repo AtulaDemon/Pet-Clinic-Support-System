@@ -4,7 +4,7 @@ import SLUGS from 'resources/slugs';
 import LoadingComponent from 'components/loading';
 import ProductListView from 'pages/inventory/ProductListView/index';
 import AddProductView from 'pages/inventory/AddProduct/index';
-
+import EmployeeListView from 'pages/human-resources/EmployeeListView/index';
 const DashboardComponent = lazy(() => import('./dashboard'));
 
 function PrivateRoutes() {
@@ -36,8 +36,8 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.customerList} render={() => <div>customerList</div>} />
                 <Route exact path={SLUGS.createCustomerAccount} render={() => <div>createCustomerAccount</div>} />
                 
-                <Route exact path={SLUGS.humanResources} render={() => <div>employeeList</div>} />
-                <Route exact path={SLUGS.employeeList} render={() => <div>employeeList</div>} />
+                <Route exact path={SLUGS.humanResources} render={() => <div><EmployeeListView/></div>} />
+                <Route exact path={SLUGS.employeeList} render={() => <div><EmployeeListView/></div>} />
                 <Route exact path={SLUGS.addNewEmployee} render={() => <div>addNewEmployee</div>} />
                 
                 <Redirect to={SLUGS.dashboard} />

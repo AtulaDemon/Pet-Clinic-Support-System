@@ -10,9 +10,6 @@ const useStyles = makeStyles({
     margin: {
         marginTop: '10px',
         marginBottom: '10px'
-    },
-    headTitle: {
-        marginBottom: '50px'
     }
 });
 

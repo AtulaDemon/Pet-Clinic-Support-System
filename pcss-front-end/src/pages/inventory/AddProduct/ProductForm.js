@@ -132,7 +132,7 @@ const ProfileForm = ({ className, ...rest }) => {
                         />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <FormLabel component='legend'>Trạng thái</FormLabel>
+                        <FormLabel component='legend' margin='normal'>Trạng thái</FormLabel>
                         <RadioGroup
                             aria-label='Trạng thái'
                             name='status'

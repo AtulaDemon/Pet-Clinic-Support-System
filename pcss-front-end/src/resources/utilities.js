@@ -13,7 +13,6 @@ export function convertUrlToBreadcrumbLink(url, parameters){
         return breadcrumbLink;
     }
     breadcrumbLink = arr[2];
-    console.log(breadcrumbLink);
     Object.entries(parameters).forEach(([key, value]) => {
         breadcrumbLink = breadcrumbLink.replace(key, value);
     });

@@ -14,12 +14,9 @@ const useStyles = createUseStyles((theme) => ({
         padding: '12px 16px 6px 16px !important'
     },
     itemContainer: {
-        marginLeft: -32,
-        marginRight: -32,
-        paddingLeft: 32,
-        paddingRight: 32,
-        paddingBottom: 18,
-        paddingTop: 18,
+        margin: 3,
+        paddingBottom: 4,
+        paddingTop: 4,
         borderBottom: `1px solid ${theme.color.lightGrayishBlue2}`,
         '&:last-child': {
             borderBottom: 'none'

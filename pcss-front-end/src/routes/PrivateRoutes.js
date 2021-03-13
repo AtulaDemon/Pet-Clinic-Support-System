@@ -5,7 +5,7 @@ import LoadingComponent from 'components/loading';
 import ProductListView from 'pages/inventory/ProductListView/index';
 import AddProductView from 'pages/inventory/AddProduct/index';
 import CustomerListView from 'pages/customer/CustomerListView/index';
-import CreateNewService from 'pages/service/CreateNewService/index';
+import CreateNewService from 'pages/service/CreateNewServiceOrder/index';
 
 const DashboardComponent = lazy(() => import('./dashboard'));
 

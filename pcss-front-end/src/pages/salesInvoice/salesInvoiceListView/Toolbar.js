@@ -86,7 +86,7 @@ const Toolbar = ({ className, ...rest }) => {
                 <Button className={classes.button}>Import</Button>
                 <Button className={classes.button}>Export</Button>
                 <Button color='primary' variant='contained'>
-                    {VNLABELS.LABEL_INVENTORY_ADD_NEW_PRODUCT}
+                    {VNLABELS.LABEL_SI_CREATE_SALES_INVOICE}
                 </Button>
             </Box>
             <Box mt={3}>
@@ -115,7 +115,7 @@ const Toolbar = ({ className, ...rest }) => {
                                     )
                                 }}
                                 placeholder={
-                                    VNLABELS.LABEL_SEARCH + ' ' + VNLABELS.LABEL_COMMON_PRODUCT
+                                    VNLABELS.LABEL_SEARCH + ' ' + VNLABELS.LABEL_COMMON_SALES_INVOICE
                                 }
                                 variant='outlined'
                             />

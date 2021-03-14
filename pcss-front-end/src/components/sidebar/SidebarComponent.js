@@ -26,7 +26,6 @@ const useStyles = createUseStyles({
         marginBottom: 16,
         opacity: 0.06,
         overflowY: 'hidden',
-
     }
 });
 
@@ -45,7 +44,7 @@ function SidebarComponent() {
     }
 
     return (
-        <Menu isMobile={isMobile}>
+        <Menu isMobile={isMobile} className={classes.separator}>
             <div style={{ paddingTop: 30, paddingBottom: 30 }}>
                 <LogoComponent />
             </div>

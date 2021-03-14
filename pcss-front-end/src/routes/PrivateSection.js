@@ -4,6 +4,7 @@ import { Column, Row } from 'simple-flexbox';
 import { SidebarComponent, SidebarContext } from 'components/sidebar';
 import HeaderComponent from 'components/header/HeaderComponent';
 import PrivateRoutes from './PrivateRoutes';
+import BreadcrumbComponent from 'components/breadcrumb/BreadcrumbComponent'
 
 const useStyles = createUseStyles({
     container: {
@@ -32,6 +33,7 @@ function PrivateSection() {
                 <SidebarComponent />
                 <Column flexGrow={1} className={classes.mainBlock}>
                     <HeaderComponent />
+                    <BreadcrumbComponent />
                     <div className={classes.contentBlock}>
                         <PrivateRoutes />
                     </div>

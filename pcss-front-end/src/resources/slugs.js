@@ -9,6 +9,7 @@ export default {
     salesInvoice: '/salesInvoice',
     salesInvoiceList: '/salesInvoice/salesInvoiceList',
     createSalesInvoice: '/salesInvoice/createSalesInvoice',
+    salesInvoiceDetail: '/salesInvoice/salesInvoiceDetail',
     serviceCatalog: '/serviceCatalog',
     serviceList: '/serviceCatalog/serviceList',
     createNewService: '/serviceCatalog/createNewService',

@@ -7,6 +7,7 @@ import AddProductView from 'pages/inventory/AddProduct/index';
 import ProductDetailsView from 'pages/inventory/ProductDetailView/index';
 import SalesInvoiceList from 'pages/salesInvoice/salesInvoiceListView/index';
 import CreateSalesInvoice from 'pages/salesInvoice/createSalesInvoiceView/index';
+import SalesInvoiceDetail from 'pages/salesInvoice/salesInvoiceDetailView/index';
 
 const DashboardComponent = lazy(() => import('./dashboard'));
 
@@ -24,6 +25,7 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.salesInvoice} render={() => <SalesInvoiceList />} />
                 <Route exact path={SLUGS.salesInvoiceList} render={() => <SalesInvoiceList />} />
                 <Route exact path={SLUGS.createSalesInvoice} render={() => <CreateSalesInvoice />} />
+                <Route exact path={SLUGS.salesInvoiceDetail} render={() => <SalesInvoiceDetail />} />
 
                 <Route exact path={SLUGS.serviceCatalog} render={() => <div>serviceList</div>} />
                 <Route exact path={SLUGS.serviceList} render={() => <div>serviceList</div>} />

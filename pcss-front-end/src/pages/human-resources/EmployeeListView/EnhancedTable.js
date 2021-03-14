@@ -4,10 +4,9 @@ import clsx from 'clsx';
 import { lighten, makeStyles, useTheme } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination,
 TableRow, TableSortLabel, Toolbar, Typography, Paper, Checkbox, IconButton, Tooltip,
-FormControlLabel, Switch
+FormControlLabel, Switch,Link
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import {Link} from 'react-router-dom';
 import SLUGS from '../../../resources/slugs';
 import VNLABELS from 'resources/vnlabels';
 function createData(name, position, status) {

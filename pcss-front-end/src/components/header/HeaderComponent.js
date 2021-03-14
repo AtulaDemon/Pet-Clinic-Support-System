@@ -71,10 +71,10 @@ function HeaderComponent() {
         case currentItem === SLUGS.dashboard:
             title = 'Dashboard';
             break;
-        case [SLUGS.product, SLUGS.productList, SLUGS.addNewProduct, SLUGS.createWarehouseEntry].includes(currentItem):
+        case [SLUGS.product, SLUGS.productList, SLUGS.addNewProduct, SLUGS.createWarehouseEntry, SLUGS.productDetail, SLUGS.editProduct].includes(currentItem):
             title = VNLABELS.LABEL_COMMON_PRODUCT;
             break;
-        case [SLUGS.salesInvoice, SLUGS.salesInvoiceList, SLUGS.createSalesInvoice].includes(currentItem):
+        case [SLUGS.salesInvoice, SLUGS.salesInvoiceList, SLUGS.createSalesInvoice, SLUGS.salesInvoiceDetail].includes(currentItem):
             title = VNLABELS.LABEL_COMMON_SALES_INVOICE;
             break;
         case [SLUGS.serviceCatalog, SLUGS.serviceList, SLUGS.createNewService].includes(currentItem):

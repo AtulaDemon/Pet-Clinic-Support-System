@@ -61,7 +61,7 @@ export default function InvoiceTable() {
                                 <Link variant='body2' className={classes.linkPadding}>
                                     {VNLABELS.LABEL_LINK_BUTTON_EDIT}
                                 </Link>
-                                <Link variant='body2' to='/product/productDetail'>
+                                <Link variant='body2' to='/salesInvoice/salesInvoiceDetail'>
                                     {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL}
                                 </Link>
                             </TableCell>

@@ -90,7 +90,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const ProductForm = ({ className, ...rest }) => {
+const EditProductForm = ({ className, ...rest }) => {
     const classes = useStyles();
     const [values, setValues] = useState({
         firstName: 'Katarina',
@@ -127,8 +127,9 @@ const ProductForm = ({ className, ...rest }) => {
                             name='firstName'
                             onChange={handleChange}
                             required
-                            value={values.firstName}
+                            value='sản phẩm'
                             variant='outlined'
+                            aria-readonly
                         />
                     </Grid>
                     <Grid item md={6} xs={12}>
@@ -201,8 +202,8 @@ const ProductForm = ({ className, ...rest }) => {
     );
 };
 
-ProductForm.propTypes = {
+EditProductForm.propTypes = {
     className: PropTypes.string
 };
 
-export default ProductForm;
+export default EditProductForm;

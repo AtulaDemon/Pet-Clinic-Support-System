@@ -14,11 +14,13 @@ const VNBREADCRUMB = {
     addNewProduct: 'Thêm sản phẩm mới',
     createWarehouseEntry: 'Tạo phiếu nhập kho',
     productDetail: 'Chi tiết sản phẩm',
+    editProduct: 'Sửa thông tin sản phẩm',
 
     //SALES INVOICE = SI
     //Hóa đơn bán hàng = HĐBH
     salesInvoiceList: 'Danh sách HĐBH',
     createSalesInvoice: 'Tạo HĐBH',
+    salesInvoiceDetail: 'Chi tiết hóa đơn',
 
     //SERVICE CATALOG = SC
     serviceList: 'Danh sách dịch vụ',

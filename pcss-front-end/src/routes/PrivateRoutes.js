@@ -49,6 +49,7 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.humanResources} render={() => <div><EmployeeListView/></div>} />
                 <Route exact path={SLUGS.employeeList} render={() => <div><EmployeeListView/></div>} />
                 <Route exact path={SLUGS.addNewEmployee} render={() => <AddNewEmployeeView/>} />
+                <Route exact path={SLUGS.employeeDetail} render={() => <EmployeeDetailView/>} />
                 
                 <Redirect to={SLUGS.dashboard} />
             </Switch>

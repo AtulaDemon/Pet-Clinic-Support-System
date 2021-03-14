@@ -16,14 +16,15 @@ import { Container, makeStyles, Typography,
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import VNLabels from '../../../resources/vnlabels';
-const EmployeeListView = () => {
+import EmployeeDetailComponent from './EmployeeDetailComponent';
+const employeeDetailView = () => {
     return ( 
         <div title="Create new Employee">
         <Container maxWidth={false}>
-          
+          <EmployeeDetailComponent/>
         </Container>
       </div>
      );
 }
  
-export default EmployeeListView;
+export default employeeDetailView;

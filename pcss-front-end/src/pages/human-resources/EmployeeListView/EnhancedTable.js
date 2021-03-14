@@ -4,11 +4,12 @@ import clsx from 'clsx';
 import { lighten, makeStyles, useTheme } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination,
 TableRow, TableSortLabel, Toolbar, Typography, Paper, Checkbox, IconButton, Tooltip,
-FormControlLabel, Switch, Link
+FormControlLabel, Switch
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-
-
+import {Link} from 'react-router-dom';
+import SLUGS from '../../../resources/slugs';
+import VNLABELS from 'resources/vnlabels';
 function createData(name, position, status) {
   return { name, position, status };
 }
@@ -66,12 +67,7 @@ function EnhancedTableHead(props) {
     <TableHead>
       <TableRow>
         <TableCell >
-          {/* <Checkbox
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{ 'aria-label': 'select all desserts' }}
-          /> */}
+         
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
@@ -147,11 +143,6 @@ const EnhancedTableToolbar = (props) => {
           </IconButton>
         </Tooltip>
       ) : (
-        // <Tooltip title="Filter list">
-        //   <IconButton aria-label="filter list">
-        //     <FilterListIcon />
-        //   </IconButton>
-        // </Tooltip>
         <div></div>
       )}
     </Toolbar>
@@ -204,14 +195,6 @@ export default function EnhancedTable() {
     setOrderBy(property);
   };
 
-  const handleSelectAllClick = (event) => {
-    if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
-      setSelected(newSelecteds);
-      return;
-    }
-    setSelected([]);
-  };
 
   const handleClick = (event, name) => {
     const selectedIndex = selected.indexOf(name);
@@ -246,7 +229,6 @@ export default function EnhancedTable() {
     setDense(event.target.checked);
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -266,7 +248,6 @@ export default function EnhancedTable() {
               numSelected={selected.length}
               order={order}
               orderBy={orderBy}
-              onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
             />
@@ -274,19 +255,10 @@ export default function EnhancedTable() {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
-                      hover
-                      onClick={(event) => handleClick(event, row.name)}
-                      role="checkbox"
-                      aria-checked={isItemSelected}
-                      tabIndex={-1}
-                      key={row.name}
-                      selected={isItemSelected}
-                      
                     >
                       <TableCell padding="checkbox">
                       </TableCell>
@@ -296,8 +268,11 @@ export default function EnhancedTable() {
                       <TableCell align="right">{row.position}</TableCell>
                       <TableCell align="right">{row.status}</TableCell>
                       <TableCell align="left">
-                        <Link component="button" variant="body2"className={classes.linkPadding}> Edit </Link>
-                        <Link component="button" variant="body2" > View Detail </Link>
+                        <Link component="button" variant="body2"
+                        className={classes.linkPadding}
+                        > Edit </Link>
+                        <Link  component="button" variant="body2" to='/employee/employeeDetail'  > 
+                        {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL} </Link>
                       </TableCell>
                     </TableRow>
                   );

@@ -57,6 +57,7 @@ const VNLABELS = {
     LABEL_LINK_BUTTON_VIEW_DETAIL: 'Xem thêm',
     LABEL_LINK_BUTTON_ADD: 'Thêm',
     LABEL_LINK_BUTTON_CANCEL: 'Huỷ',
+    LABEL_LINK_BUTTON_DISABLE: 'Cho Nghỉ',
     
     //TOOLBAR
     LABEL_SEARCH: 'Tìm kiếm',

@@ -24,6 +24,7 @@ export default {
     humanResources: '/employee',
     employeeList: '/employee/emloyeeList',
     addNewEmployee: '/employee/addEmployee',
+    employeeDetail:'/employee/employeeDetail',
     
 
 

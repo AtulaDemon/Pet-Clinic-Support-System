@@ -4,7 +4,6 @@ import SLUGS from 'resources/slugs';
 import LoadingComponent from 'components/loading';
 import ProductListView from 'pages/inventory/ProductListView/index';
 import AddProductView from 'pages/inventory/AddProduct/index';
-
 import CustomerListView from 'pages/customer/CustomerListView/index';
 import CreateNewServiceOrder from 'pages/serviceOrder/CreateNewServiceOrder/index';
 import ProductDetailsView from 'pages/inventory/ProductDetailView/index';
@@ -13,6 +12,10 @@ import CreateSalesInvoice from 'pages/salesInvoice/CreateSalesInvoiceView/index'
 import SalesInvoiceDetail from 'pages/salesInvoice/SalesInvoiceDetailView/index';
 import EditProductView from 'pages/inventory/EditProduct/index';
 import InventoryEntryForm from 'pages/inventory/CreateWarehouseEntry/index';
+import EmployeeDetailView from 'pages/human-resources/EmployeeDetailView/index';
+import AddNewEmployeeView from 'pages/human-resources/AddNewEmployeeView/index';
+import EmployeeListView from 'pages/human-resources/EmployeeListView/index';
+
 
 const DashboardComponent = lazy(() => import('./dashboard'));
 
@@ -48,9 +51,10 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.customerList} render={() => <CustomerListView/> } />
                 <Route exact path={SLUGS.createCustomerAccount} render={() => <div>createCustomerAccount</div>} />
                 
-                <Route exact path={SLUGS.humanResources} render={() => <div>employeeList</div>} />
-                <Route exact path={SLUGS.employeeList} render={() => <div>employeeList</div>} />
-                <Route exact path={SLUGS.addNewEmployee} render={() => <div>addNewEmployee</div>} />
+                <Route exact path={SLUGS.humanResources} render={() => <div><EmployeeListView/></div>} />
+                <Route exact path={SLUGS.employeeList} render={() => <div><EmployeeListView/></div>} />
+                <Route exact path={SLUGS.addNewEmployee} render={() => <AddNewEmployeeView/>} />
+                <Route exact path={SLUGS.employeeDetail} render={() => <EmployeeDetailView/>} />
                 
                 <Redirect to={SLUGS.dashboard} />
             </Switch>

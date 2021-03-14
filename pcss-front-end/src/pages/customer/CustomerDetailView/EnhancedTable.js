@@ -8,19 +8,13 @@ FormControlLabel, Switch,Link
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import VNLABELS from 'resources/vnlabels';
-function createData(name, position, status) {
-  return { name, position, status };
+function createData(id, name, type,history,medicalRecord) {
+  return { id, name, type,history,medicalRecord};
 }
 
 const rows = [
-  createData('Dinh Tien Kien', 'Take care', 'Working'),
-  createData('Pham Quoc Duc', 'Doctor', 'Working' ),
-  createData('Nguyen Quynh Anh', 'Janitor', 'Working' ),
-  createData('Pham Tien Manh', 'Doctor', 'Working' ),
-  createData('Nguyen Tien Dat', 'Doctor', 'Working' ),
-  createData('Pham Quoc A', 'Doctor', 'Working' ),
-  createData('Pham Quoc B','Doctor', 'Disable'),
-  createData('Pham Quoc C', 'Doctor', 'disable' )
+    createData(1, 'Jack', 'Chó',2,3),
+    createData(2, 'Jack', 'Chó',2,3),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -50,9 +44,11 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'Employee Name' },
-  { id: 'position', numeric: true, disablePadding: false, label: 'Position' },
-  { id: 'status', numeric: true, disablePadding: false, label: 'status' },
+  { id: 'id', numeric: false, disablePadding: true, label: 'STT' },
+  { id: 'name', numeric: true, disablePadding: false, label: 'Pet Name' },
+  { id: 'type', numeric: true, disablePadding: false, label: 'Type' },
+  { id: 'history', numeric: true, disablePadding: false, label: 'Medical History' },
+  { id: 'medicalRecord', numeric: true, disablePadding: false, label: 'Medical Record' },
 ];
 
 function EnhancedTableHead(props) {
@@ -242,10 +238,13 @@ export default function EnhancedTable() {
                       <TableCell padding="checkbox">
                       </TableCell>
                       <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                        {row.id}
                       </TableCell>
-                      <TableCell align="right">{row.position}</TableCell>
-                      <TableCell align="right">{row.status}</TableCell>
+                      <TableCell align="right">{row.name}</TableCell>
+                      <TableCell align="right">{row.type}</TableCell>
+                      <TableCell align="right">{row.history}</TableCell>
+                      <TableCell align="right">{row.medicalRecord}</TableCell>
+
                       <TableCell align="left">
                         <Link component="button" variant="body2"
                         className={classes.linkPadding}
@@ -265,7 +264,7 @@ export default function EnhancedTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[4, 8, 20]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}

@@ -20,6 +20,7 @@ export default {
     serviceSchedule: '/serviceOrder/serviceSchedule',
     customer: '/customer',
     customerList: '/customer/customerList',
+    customerDetail:'/customer/customerDetail',
     createCustomerAccount: '/customer/createCustomerAccount',
     humanResources: '/employee',
     employeeList: '/employee/emloyeeList',

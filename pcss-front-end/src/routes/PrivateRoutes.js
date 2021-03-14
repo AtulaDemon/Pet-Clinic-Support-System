@@ -13,7 +13,7 @@ import AddNewEmployeeView from 'pages/human-resources/AddNewEmployeeView/index';
 import EmployeeListView from 'pages/human-resources/EmployeeListView/index';
 import CustomerListView from 'pages/customer/CustomerListView/index';
 import CreateNewService from 'pages/service/CreateNewService/index';
-
+import CustomerDetailComponent from 'pages/customer/CustomerDetailView/index'
 const DashboardComponent = lazy(() => import('./dashboard'));
 
 function PrivateRoutes() {
@@ -42,8 +42,9 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.pendingService} render={() => <div>pendingService</div>} />
                 <Route exact path={SLUGS.serviceSchedule} render={() => <div>serviceSchedule</div>} />
 
-                <Route exact path={SLUGS.customer} render={() => <div>customer</div>}/>
+                <Route exact path={SLUGS.customer} render={() => <CustomerListView/> }/>
                 <Route exact path={SLUGS.customerList} render={() => <CustomerListView/> } />
+                <Route exact path={SLUGS.customerDetail} render={() => <CustomerDetailComponent/> } />
                 <Route exact path={SLUGS.createCustomerAccount} render={() => <div>createCustomerAccount</div>} />
                 
                 <Route exact path={SLUGS.humanResources} render={() => <div><EmployeeListView/></div>} />

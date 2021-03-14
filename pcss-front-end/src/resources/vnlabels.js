@@ -8,7 +8,10 @@ const VNLABELS = {
     LABEL_COMMON_CUSTOMER: 'Khách hàng',
     LABEL_COMMON_HUMAN_RESOURCES: 'Nhân sự',
     LABEL_COMMON_INVENTORY: 'Kho hàng',
-
+    LABEL_COMMON_NAME: 'Họ và tên',
+    LABEL_COMMON_EMAIL:'Email',
+    LABEL_COMMON_PHONE:'Số điện thoại',
+    LABEL_COMMON_ADDRESS:'Địa chỉ',
     //INVENTORY
     LABEL_INVENTORY_PRODUCT_LIST: 'Danh sách sản phẩm',
     LABEL_INVENTORY_ADD_NEW_PRODUCT: 'Thêm sản phẩm mới',

@@ -1,17 +1,11 @@
-import React, { Component } from 'react';
-import { Container, makeStyles, Typography,
-    Card,
-    CardContent,
-    CardHeader,
+import React from 'react';
+import { makeStyles, Typography,
     Button,
     ListItem,
     Box,
     List,
     TextField, } from '@material-ui/core';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
 import VNLABELS from 'resources/vnlabels';
-import {useState} from 'react';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             margin: theme.spacing(1),
           },
-        // marginRight: theme.spacing(2),
+       
         [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
           width: 600,
           marginLeft: 'auto',
@@ -46,9 +40,6 @@ const useStyles = makeStyles((theme) => ({
     },
 
   }));
-// const labels = useState(){
-
-// }
 const information ={
 name: 'Phạm Quốc A',
 id: '354616213',

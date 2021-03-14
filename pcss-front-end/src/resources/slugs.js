@@ -5,6 +5,7 @@ export default {
     productList: '/product/productList',
     productDetail: '/product/productDetail',
     addNewProduct: '/product/addNewProduct',
+    editProduct: '/product/editProduct',
     createWarehouseEntry: '/product/createWarehouseEntry',
     salesInvoice: '/salesInvoice',
     salesInvoiceList: '/salesInvoice/salesInvoiceList',

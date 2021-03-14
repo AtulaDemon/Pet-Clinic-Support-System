@@ -15,7 +15,8 @@ import {
     TableRow,
     TableBody,
     Paper,
-    Divider} from '@material-ui/core';
+    Divider
+} from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         minHeight: '100%'
@@ -160,7 +161,7 @@ const SalesInvoiceDetail = () => {
                                     ></TextField>
                                 </Grid>
                                 <Grid item md={3} sx={12}></Grid>
-                                
+
                                 <Grid item md={12} xs={12}>
                                     <InvoiceItemTable />
                                 </Grid>
@@ -172,15 +173,19 @@ const SalesInvoiceDetail = () => {
                                         variant='outlined'
                                     ></TextField>
                                 </Grid>
+                                <Grid item md={4} xs={12}></Grid>
                                 <Grid item md={4} xs={12}>
+                                    Tổng tiền: 1000000
                                 </Grid>
-                                <Grid item md={4} xs={12}>Tổng tiền: 1000000</Grid>
                             </Grid>
                         </CardContent>
 
                         <Divider className={classes.marginFix} />
 
                         <Box display='flex' justifyContent='flex-end' p={2} m={2}>
+                            <Button color='default' variant='contained'>
+                               Xóa hóa đơn
+                            </Button>
                             <Button color='primary' variant='contained'>
                                 Save details
                             </Button>

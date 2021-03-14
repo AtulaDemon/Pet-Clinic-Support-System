@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
     root: {}
 }));
 
-const ProfileDetails = ({ className, ...rest }) => {
+const ProductDetail = ({ className, ...rest }) => {
     const classes = useStyles();
     const [values, setValues] = useState({
         firstName: 'Katarina',
@@ -141,8 +141,8 @@ const ProfileDetails = ({ className, ...rest }) => {
     );
 };
 
-ProfileDetails.propTypes = {
+ProductDetail.propTypes = {
     className: PropTypes.string
 };
 
-export default ProfileDetails;
+export default ProductDetail;

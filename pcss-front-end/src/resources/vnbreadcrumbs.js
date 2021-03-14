@@ -14,6 +14,7 @@ const VNBREADCRUMB = {
     addNewProduct: 'Thêm sản phẩm mới',
     createWarehouseEntry: 'Tạo phiếu nhập kho',
     productDetail: 'Chi tiết sản phẩm',
+    editProduct: 'Sửa thông tin sản phẩm',
 
     //SALES INVOICE = SI
     //Hóa đơn bán hàng = HĐBH

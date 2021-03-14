@@ -71,7 +71,7 @@ function HeaderComponent() {
         case currentItem === SLUGS.dashboard:
             title = 'Dashboard';
             break;
-        case [SLUGS.product, SLUGS.productList, SLUGS.addNewProduct, SLUGS.createWarehouseEntry, SLUGS.productDetail].includes(currentItem):
+        case [SLUGS.product, SLUGS.productList, SLUGS.addNewProduct, SLUGS.createWarehouseEntry, SLUGS.productDetail, SLUGS.editProduct].includes(currentItem):
             title = VNLABELS.LABEL_COMMON_PRODUCT;
             break;
         case [SLUGS.salesInvoice, SLUGS.salesInvoiceList, SLUGS.createSalesInvoice, SLUGS.salesInvoiceDetail].includes(currentItem):

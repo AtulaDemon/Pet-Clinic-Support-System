@@ -5,9 +5,11 @@ import LoadingComponent from 'components/loading';
 import ProductListView from 'pages/inventory/ProductListView/index';
 import AddProductView from 'pages/inventory/AddProduct/index';
 import ProductDetailsView from 'pages/inventory/ProductDetailView/index';
-import SalesInvoiceList from 'pages/salesInvoice/salesInvoiceListView/index';
-import CreateSalesInvoice from 'pages/salesInvoice/createSalesInvoiceView/index';
-import SalesInvoiceDetail from 'pages/salesInvoice/salesInvoiceDetailView/index';
+import SalesInvoiceList from 'pages/salesInvoice/SalesInvoiceListView/index';
+import CreateSalesInvoice from 'pages/salesInvoice/CreateSalesInvoiceView/index';
+import SalesInvoiceDetail from 'pages/salesInvoice/SalesInvoiceDetailView/index';
+import EditProductView from 'pages/inventory/EditProduct/index';
+import InventoryEntryForm from 'pages/inventory/CreateWarehouseEntry/index';
 
 const DashboardComponent = lazy(() => import('./dashboard'));
 
@@ -16,11 +18,12 @@ function PrivateRoutes() {
         <Suspense fallback={<LoadingComponent loading />}>
             <Switch>
                 <Route exact path={SLUGS.dashboard} component={DashboardComponent} />
-                <Route exact path={SLUGS.createWarehouseEntry} render={() => <div>createWarehouseEntry</div> }/>
+                <Route exact path={SLUGS.createWarehouseEntry} render={() => <InventoryEntryForm />}/>
                 <Route exact path={SLUGS.addNewProduct} render={() => <AddProductView />} />
                 <Route exact path={SLUGS.productList} render={() => <ProductListView />} />
                 <Route exact path={SLUGS.product} render={() => <ProductListView />} />
                 <Route exact path={SLUGS.productDetail} render={() => <ProductDetailsView />} />
+                <Route exact path={SLUGS.editProduct} render={() => <EditProductView />} />
 
                 <Route exact path={SLUGS.salesInvoice} render={() => <SalesInvoiceList />} />
                 <Route exact path={SLUGS.salesInvoiceList} render={() => <SalesInvoiceList />} />

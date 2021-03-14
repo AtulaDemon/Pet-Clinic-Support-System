@@ -4,6 +4,9 @@ import SLUGS from 'resources/slugs';
 import LoadingComponent from 'components/loading';
 import ProductListView from 'pages/inventory/ProductListView/index';
 import AddProductView from 'pages/inventory/AddProduct/index';
+
+import EmployeeDetailView from 'pages/human-resources/EmployeeDetailView/index';
+import AddNewEmployeeView from 'pages/human-resources/AddNewEmployeeView/index';
 import EmployeeListView from 'pages/human-resources/EmployeeListView/index';
 import CustomerListView from 'pages/customer/CustomerListView/index';
 import CreateNewService from 'pages/service/CreateNewService/index';
@@ -41,7 +44,7 @@ function PrivateRoutes() {
                 
                 <Route exact path={SLUGS.humanResources} render={() => <div><EmployeeListView/></div>} />
                 <Route exact path={SLUGS.employeeList} render={() => <div><EmployeeListView/></div>} />
-                <Route exact path={SLUGS.addNewEmployee} render={() => <div>addNewEmployee</div>} />
+                <Route exact path={SLUGS.addNewEmployee} render={() => <AddNewEmployeeView/>} />
                 
                 <Redirect to={SLUGS.dashboard} />
             </Switch>

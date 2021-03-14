@@ -42,6 +42,12 @@ const VNLABELS = {
     //HUMAN RESOURCES = HR
     LABEL_HR_EMPLOYEE_LIST: 'Danh sách nhân viên',
     LABEL_HR_ADD_NEW_EMPLOYEE: 'Thêm nhân viên',
+    LABEL_HR_ADD_NEW_EMPLOYEE_FULLNAME:'Họ và tên', 
+    LABEL_HR_ADD_NEW_EMPLOYEE_ID:'Số CCCD',
+    LABEL_HR_ADD_NEW_EMPLOYEE_EMAIL:'Email', 
+    LABEL_HR_ADD_NEW_EMPLOYEE_PHONE:'Số Điện Thoại', 
+    LABEL_HR_ADD_NEW_EMPLOYEE_STATUS:'Trạng Thái', 
+    LABEL_HR_ADD_NEW_EMPLOYEE_POSITION:'Vị Trí',
     
     //TABLE
     LABEL_TABLE_HEAD_EDIT_INFO: 'Xem thông tin',
@@ -49,7 +55,9 @@ const VNLABELS = {
     //LINK BUTTON
     LABEL_LINK_BUTTON_EDIT: 'Sửa',
     LABEL_LINK_BUTTON_VIEW_DETAIL: 'Xem thêm',
-
+    LABEL_LINK_BUTTON_ADD: 'Thêm',
+    LABEL_LINK_BUTTON_CANCEL: 'Huỷ',
+    
     //TOOLBAR
     LABEL_SEARCH: 'Tìm kiếm',
     LABEL_FILTER: 'Lọc',

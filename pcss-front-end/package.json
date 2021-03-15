@@ -11,6 +11,7 @@
         "@material-ui/pickers": "^3.3.10",
         "@material-ui/system": "^4.11.3",
         "date-fns": "^2.19.0",
+        "material-table": "^1.69.2",
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-burger-menu": "^2.6.13",

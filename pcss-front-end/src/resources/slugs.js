@@ -12,8 +12,7 @@ export default {
     createSalesInvoice: '/salesInvoice/createSalesInvoice',
     salesInvoiceDetail: '/salesInvoice/salesInvoiceDetail',
     serviceCatalog: '/serviceCatalog',
-    serviceList: '/serviceCatalog/serviceList',
-    createNewService: '/serviceCatalog/createNewService',
+
     serviceOrder: '/serviceOrder',
     createServiceOrder: '/serviceOrder/createServiceOrder',
     medicalRecord: '/serviceOrder/medicalRecord',
@@ -27,7 +26,11 @@ export default {
     employeeList: '/employee/emloyeeList',
     addNewEmployee: '/employee/addEmployee',
     employeeDetail:'/employee/employeeDetail',
-    
+        //service
+    serviceList: '/serviceCatalog/serviceList',
+    createNewService: '/serviceCatalog/createNewService',
+    serviceDetail: '/serviceCatalog/serviceDetail',
+    editService: '/serviceCatalog/editService',
 
 
     // auth

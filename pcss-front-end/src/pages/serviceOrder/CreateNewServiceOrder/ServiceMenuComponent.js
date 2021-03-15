@@ -79,13 +79,10 @@ function ServiceMenu(props) {
     });
   }
 
-  // Chưa làm onDeleteButtonClick
   function onDeleteButtonClick(index) {
-    setItems((prev) => {
-      const newItems = [...prev];
-      alert(index);
-      return newItems;
-    });
+    const dataDelete = [...items];
+    dataDelete.splice(index, 1);
+    setItems([...dataDelete]);
   }
 
   function renderAddButton() {

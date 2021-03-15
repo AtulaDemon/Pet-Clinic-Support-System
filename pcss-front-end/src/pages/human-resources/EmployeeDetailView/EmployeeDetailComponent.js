@@ -1,5 +1,5 @@
-import React from 'react';
-import { makeStyles, Typography,
+import React, { Component } from 'react';
+import { Container, makeStyles, Typography,
     Button,
     ListItem,
     Box,
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             margin: theme.spacing(1),
           },
-       
+        // marginRight: theme.spacing(2),
         [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
           width: 600,
           marginLeft: 'auto',
@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
   }));
+// const labels = useState(){
+
+// }
 const information ={
 name: 'Phạm Quốc A',
 id: '354616213',

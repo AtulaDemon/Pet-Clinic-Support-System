@@ -13,7 +13,9 @@ import AddNewEmployeeView from 'pages/human-resources/AddNewEmployeeView/index';
 import EmployeeListView from 'pages/human-resources/EmployeeListView/index';
 import CustomerListView from 'pages/customer/CustomerListView/index';
 import CreateNewService from 'pages/service/CreateNewService/index';
-import CustomerDetailComponent from 'pages/customer/CustomerDetailView/index'
+import CustomerDetailComponent from 'pages/customer/CustomerDetailView/index';
+import EditEmployeeDetail from 'pages/human-resources/EditEmployeeDetail/index';
+
 const DashboardComponent = lazy(() => import('./dashboard'));
 
 function PrivateRoutes() {
@@ -51,8 +53,9 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.employeeList} render={() => <div><EmployeeListView/></div>} />
                 <Route exact path={SLUGS.addNewEmployee} render={() => <AddNewEmployeeView/>} />
                 <Route exact path={SLUGS.employeeDetail} render={() => <EmployeeDetailView/>} />
+                <Route exact path={SLUGS.editEmployee} render={() => <EditEmployeeDetail/>} />
                 
-                <Redirect to={SLUGS.dashboard} />
+                <Redirect to={SLUGS.employeeDetail} />
             </Switch>
         </Suspense>
     );

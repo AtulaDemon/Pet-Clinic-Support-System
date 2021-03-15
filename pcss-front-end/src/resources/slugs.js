@@ -26,6 +26,7 @@ export default {
     employeeList: '/employee/emloyeeList',
     addNewEmployee: '/employee/addEmployee',
     employeeDetail:'/employee/employeeDetail',
+    editEmployee:'/employee/editEmployee',
     
 
 

@@ -127,26 +127,29 @@ const EditEmployeeComponent = () => {
                     <ListItem className={classes.root} noValidate autoComplete="off">
                         <Typography variant="h6" className={classes.label}>{VNLABELS.LABEL_HR_ADD_NEW_EMPLOYEE_POSITION}</Typography>
                         <TextField
-                        id="filled-select-currency"
+                            id="filled-select-currency"
                             select
                             className={classes.input}
                             variant='outlined'
                             value={position}
                             onChange={handleChange}
                         >
-                        {positions.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
-                                {option.label}
-                            </MenuItem>
-                        ))}</TextField>
+                            {positions.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                            ))}</TextField>
                     </ListItem>
                 </List>
                 <Box display='flex' className={classes.button} p={2}>
                     <Button variant="contained" color="primary">
-                        {VNLABELS.LABEL_LINK_BUTTON_EDIT}
+                        {VNLABELS.LABEL_LINK_BUTTON_CANCEL}
                     </Button>
                     <Button variant="contained" color="primary">
                         {VNLABELS.LABEL_LINK_BUTTON_DISABLE}
+                    </Button>
+                    <Button variant="contained" color="primary">
+                        {VNLABELS.LABEL_LINK_BUTTON_SAVE}
                     </Button>
                 </Box>
             </div>

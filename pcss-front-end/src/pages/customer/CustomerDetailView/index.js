@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Container, Grid, makeStyles } from '@material-ui/core';
+import {Container, Grid, makeStyles } from '@material-ui/core';
 import CustomerDetailComponent from './CustomerDetailComponent';
 import EnhancedTable from './EnhancedTable'
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) =>({
     root: {
         minHeight: '100%'
     },
@@ -12,9 +12,8 @@ const useStyles = makeStyles({
     },
     card:{
         padding:'1ch',
-    }
-    
-});
+    },
+}));
 const CustomerDetailView = () => {
     const classes = useStyles();
     return (
@@ -23,8 +22,9 @@ const CustomerDetailView = () => {
                 <Grid className={classes.card}>
                     <CustomerDetailComponent />
                 </Grid>
-                <Grid className={classes.card}>
+                <Grid className={classes.card} direction="column">
                     <EnhancedTable></EnhancedTable>
+                   
                 </Grid>
             </Grid>
         </Container>

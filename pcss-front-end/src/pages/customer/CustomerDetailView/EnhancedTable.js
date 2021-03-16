@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {makeStyles, useTheme } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination,
 TableRow, TableSortLabel, Toolbar, Typography, Paper, IconButton, Tooltip,
-FormControlLabel, Switch,Link
+FormControlLabel, Switch,Link, Box, Button
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import VNLABELS from 'resources/vnlabels';
@@ -126,7 +126,7 @@ const EnhancedTableToolbar = (props) => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-          Employee List
+          Pet List
         </Typography>
       )}
 
@@ -147,7 +147,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-const useStyles = makeStyles(({
+const useStyles = makeStyles((theme)=>({
   root: {
     width: '100%',
   },
@@ -170,7 +170,20 @@ const useStyles = makeStyles(({
   },
   linkPadding: {
     paddingRight: '10px'
-  }
+  },
+  buttons: {
+    width: 'auto',
+    '& > *': {
+        margin: theme.spacing(0.5),
+    },
+
+    [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
+        width: 600,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+}
+
 }));
 
 export default function EnhancedTable() {
@@ -180,7 +193,7 @@ export default function EnhancedTable() {
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(false);
+  const [dense, setDense] = React.useState(true);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleRequestSort = (event, property) => {
@@ -262,21 +275,22 @@ export default function EnhancedTable() {
               )}
             </TableBody>
           </Table>
+          <Box display='flex' className={classes.buttons} p={2}>
+                    <Button variant="contained" color="primary">
+                        {VNLABELS.LABEL_LINK_BUTTON_ADD}
+                    </Button>
+                    <Button variant="contained" color="primary">
+                        {VNLABELS.LABEL_LINK_BUTTON_SAVE}
+                    </Button>
+                </Box>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[4, 8, 20]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
+          rowsPerPageOptions={[4, 8, 20]}  component="div"
+          count={rows.length}  rowsPerPage={rowsPerPage} page={page}
+          onChangePage={handleChangePage} onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
+      
     </div>
   );
 }

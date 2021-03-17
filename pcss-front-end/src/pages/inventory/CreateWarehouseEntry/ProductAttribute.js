@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, Box, Typography, CardContent, Card, Checkbox } from '@material-ui/core';
-
-const user = {
-    avatar: '/src/assets/icons/a.jpg'
-};
+import {
+    makeStyles,
+    Box,
+    Typography,
+    CardContent,
+    Card,
+    Checkbox,
+    FormGroup,
+    FormControlLabel,
+} from '@material-ui/core';
+import SelectAttributeTable from './SelectAttributeTable';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -12,8 +18,14 @@ const useStyles = makeStyles(() => ({
     },
     media: {
         height: 140
+    },
+    margin: {
+        marginTop: '15px'
     }
 }));
+
+
+
 
 const ProductAttribute = ({ className, ...rest }) => {
     const classes = useStyles();
@@ -25,11 +37,25 @@ const ProductAttribute = ({ className, ...rest }) => {
             </Typography>
             <Card>
                 <CardContent>
-                    <Checkbox
-                        color='primary'
-                    /> Color
+                    <Typography variant='subtitle1' gutterBottom>
+                        Chọn thuộc tính
+                    </Typography>
+                    <FormGroup row>
+                        <FormControlLabel
+                            control={<Checkbox name='checkedA' color='primary' />}
+                            label='Color'
+                        />
+                        <FormControlLabel
+                            control={<Checkbox name='checkedA' color='primary' />}
+                            label='Màu sắc'
+                        />
+                    </FormGroup>
                 </CardContent>
             </Card>
+            <Typography variant='h6' gutterBottom>
+                Chọn phiên bản
+            </Typography>
+            <SelectAttributeTable />
         </Box>
     );
 };

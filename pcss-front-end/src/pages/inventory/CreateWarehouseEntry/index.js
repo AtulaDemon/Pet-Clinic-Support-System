@@ -1,7 +1,8 @@
 import React from 'react';
-import { CardContent, Container, makeStyles, Box, Card } from '@material-ui/core';
+import { CardContent, Container, makeStyles, Box, Card, Divider } from '@material-ui/core';
 import SelectProduct from './SelectProduct';
 import ProductAttribute from './ProductAttribute';
+import InventoryEntryTable from './InventoryEntryTable';
 
 const useStyles = makeStyles({
     root: {
@@ -23,6 +24,13 @@ const InventoryEntryForm = () => {
                     <CardContent>
                         <SelectProduct />
                         <ProductAttribute />
+                    </CardContent>
+                </Card>
+            </Box>
+            <Box marginTop='15px'>
+                <Card>
+                    <CardContent>
+                        <InventoryEntryTable />
                     </CardContent>
                 </Card>
             </Box>

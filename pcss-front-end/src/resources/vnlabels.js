@@ -8,7 +8,10 @@ const VNLABELS = {
     LABEL_COMMON_CUSTOMER: 'Khách hàng',
     LABEL_COMMON_HUMAN_RESOURCES: 'Nhân sự',
     LABEL_COMMON_INVENTORY: 'Kho hàng',
-
+    LABEL_COMMON_NAME: 'Họ và tên',
+    LABEL_COMMON_EMAIL:'Email',
+    LABEL_COMMON_PHONE:'Số điện thoại',
+    LABEL_COMMON_ADDRESS:'Địa chỉ',
     //INVENTORY
     LABEL_INVENTORY_PRODUCT_LIST: 'Danh sách sản phẩm',
     LABEL_INVENTORY_ADD_NEW_PRODUCT: 'Thêm sản phẩm mới',
@@ -38,6 +41,18 @@ const VNLABELS = {
     LABEL_CUSTOMER_CUSTOMER_LIST: 'Danh sách khách hàng',
     LABEL_CUSTOMER_CREATE_CUSTOMER_ACCOUNT: 'Thêm khách hàng',
 
+    //PET
+    LABEL_PET_PET_NAME: 'Tên Pet',
+    LABEL_PET_PET_SPECIES: 'Giống',
+    LABEL_PET_PET_COLOR: 'Màu',
+    LABEL_PET_PET_AGE: 'Tuổi',
+    LABEL_PET_PET_GENDER: 'Giới tính',
+    LABEL_PET_PET_MICROCHIP: 'Microchip',
+    LABEL_PET_PET_VACCINE: 'Vaccine',
+    LABEL_PET_PET_DESCRIPTION: 'Thêm Thông tin',
+
+    
+
 
     //HUMAN RESOURCES = HR
     LABEL_HR_EMPLOYEE_LIST: 'Danh sách nhân viên',
@@ -58,6 +73,9 @@ const VNLABELS = {
     LABEL_LINK_BUTTON_ADD: 'Thêm',
     LABEL_LINK_BUTTON_CANCEL: 'Huỷ',
     LABEL_LINK_BUTTON_DISABLE: 'Cho Nghỉ',
+    LABEL_LINK_BUTTON_SAVE: 'Lưu',
+    LABEL_LINK_BUTTON_RESET: 'Đặt lại',
+    
     
     //TOOLBAR
     LABEL_SEARCH: 'Tìm kiếm',

@@ -21,16 +21,19 @@ export default {
     serviceSchedule: '/serviceOrder/serviceSchedule',
     customer: '/customer',
     customerList: '/customer/customerList',
+    customerDetail:'/customer/customerDetail',
     createCustomerAccount: '/customer/createCustomerAccount',
     humanResources: '/employee',
     employeeList: '/employee/emloyeeList',
     addNewEmployee: '/employee/addEmployee',
     employeeDetail:'/employee/employeeDetail',
-        //service
+
     serviceList: '/serviceCatalog/serviceList',
     createNewService: '/serviceCatalog/createNewService',
     serviceDetail: '/serviceCatalog/serviceDetail',
     editService: '/serviceCatalog/editService',
+    editEmployee:'/employee/editEmployee',
+    
 
 
     // auth

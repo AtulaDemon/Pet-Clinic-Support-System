@@ -4,23 +4,17 @@ import clsx from 'clsx';
 import {makeStyles, useTheme } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination,
 TableRow, TableSortLabel, Toolbar, Typography, Paper, IconButton, Tooltip,
-FormControlLabel, Switch,Link
+FormControlLabel, Switch,Link, Box, Button
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import VNLABELS from 'resources/vnlabels';
-function createData(name, position, status) {
-  return { name, position, status };
+function createData(id, name, type,history,medicalRecord) {
+  return { id, name, type,history,medicalRecord};
 }
 
 const rows = [
-  createData('Dinh Tien Kien', 'Take care', 'Working'),
-  createData('Pham Quoc Duc', 'Doctor', 'Working' ),
-  createData('Nguyen Quynh Anh', 'Janitor', 'Working' ),
-  createData('Pham Tien Manh', 'Doctor', 'Working' ),
-  createData('Nguyen Tien Dat', 'Doctor', 'Working' ),
-  createData('Pham Quoc A', 'Doctor', 'Working' ),
-  createData('Pham Quoc B','Doctor', 'Disable'),
-  createData('Pham Quoc C', 'Doctor', 'disable' )
+    createData(1, 'Jack', 'Chó',2,3),
+    createData(2, 'Jack', 'Chó',2,3),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -50,9 +44,11 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'Employee Name' },
-  { id: 'position', numeric: true, disablePadding: false, label: 'Position' },
-  { id: 'status', numeric: true, disablePadding: false, label: 'status' },
+  { id: 'id', numeric: false, disablePadding: true, label: 'STT' },
+  { id: 'name', numeric: true, disablePadding: false, label: 'Pet Name' },
+  { id: 'type', numeric: true, disablePadding: false, label: 'Type' },
+  { id: 'history', numeric: true, disablePadding: false, label: 'Medical History' },
+  { id: 'medicalRecord', numeric: true, disablePadding: false, label: 'Medical Record' },
 ];
 
 function EnhancedTableHead(props) {
@@ -130,7 +126,7 @@ const EnhancedTableToolbar = (props) => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-          Employee List
+          Pet List
         </Typography>
       )}
 
@@ -151,7 +147,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-const useStyles = makeStyles(({
+const useStyles = makeStyles((theme)=>({
   root: {
     width: '100%',
   },
@@ -174,7 +170,20 @@ const useStyles = makeStyles(({
   },
   linkPadding: {
     paddingRight: '10px'
-  }
+  },
+  buttons: {
+    width: 'auto',
+    '& > *': {
+        margin: theme.spacing(0.5),
+    },
+
+    [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
+        width: 600,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+}
+
 }));
 
 export default function EnhancedTable() {
@@ -184,7 +193,7 @@ export default function EnhancedTable() {
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(false);
+  const [dense, setDense] = React.useState(true);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleRequestSort = (event, property) => {
@@ -242,10 +251,13 @@ export default function EnhancedTable() {
                       <TableCell padding="checkbox">
                       </TableCell>
                       <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                        {row.id}
                       </TableCell>
-                      <TableCell align="right">{row.position}</TableCell>
-                      <TableCell align="right">{row.status}</TableCell>
+                      <TableCell align="right">{row.name}</TableCell>
+                      <TableCell align="right">{row.type}</TableCell>
+                      <TableCell align="right">{row.history}</TableCell>
+                      <TableCell align="right">{row.medicalRecord}</TableCell>
+
                       <TableCell align="left">
                         <Link component="button" variant="body2"
                         className={classes.linkPadding}
@@ -263,21 +275,22 @@ export default function EnhancedTable() {
               )}
             </TableBody>
           </Table>
+          <Box display='flex' className={classes.buttons} p={2}>
+                    <Button variant="contained" color="primary">
+                        {VNLABELS.LABEL_LINK_BUTTON_ADD}
+                    </Button>
+                    <Button variant="contained" color="primary">
+                        {VNLABELS.LABEL_LINK_BUTTON_SAVE}
+                    </Button>
+                </Box>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
+          rowsPerPageOptions={[4, 8, 20]}  component="div"
+          count={rows.length}  rowsPerPage={rowsPerPage} page={page}
+          onChangePage={handleChangePage} onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
+      
     </div>
   );
 }

@@ -1,26 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import {makeStyles, useTheme } from '@material-ui/core/styles';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination,
-TableRow, TableSortLabel, Toolbar, Typography, Paper, IconButton, Tooltip,
-FormControlLabel, Switch,Link
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {
+  Table, TableBody, TableCell, TableContainer, TableHead, TablePagination,
+  TableRow, TableSortLabel, Toolbar, Typography, Paper, Checkbox, IconButton, Tooltip,
+  FormControlLabel, Switch, Box
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import VNLABELS from 'resources/vnlabels';
-function createData(name, position, status) {
-  return { name, position, status };
+import { Link } from 'react-router-dom';
+import VNLABELS from 'resources/vnlabels'
+
+import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
+import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
+import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
+import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+
+
+
+function createData(id, date, schedule, phone, category, status) {
+  return { id, date, schedule, phone, category, status };
 }
 
 const rows = [
-  createData('Dinh Tien Kien', 'Take care', 'Working'),
-  createData('Pham Quoc Duc', 'Doctor', 'Working' ),
-  createData('Nguyen Quynh Anh', 'Janitor', 'Working' ),
-  createData('Pham Tien Manh', 'Doctor', 'Working' ),
-  createData('Nguyen Tien Dat', 'Doctor', 'Working' ),
-  createData('Pham Quoc A', 'Doctor', 'Working' ),
-  createData('Pham Quoc B','Doctor', 'Disable'),
-  createData('Pham Quoc C', 'Doctor', 'disable' )
+  createData(1, '17-03-2021', '8h - 9h', '0123456789', 'Tổng Hợp', 'Đang Chờ'),
+  createData(2, '16-03-2021', '9h - 10h', '0123456789', 'Spa', 'Đang Chờ'),
+  createData(3, '13-03-2021', '10h - 11h', '0123456789', 'Khám Bệnh', 'Đang Chờ'),
+  createData(4, '12-03-2021', '14h - 15h', '0123456789', 'Chữa Bệnh', 'Đang Chờ'),
+  createData(5, '12-03-2021', '13h - 14h', '0123456789', 'Spa', 'Đang Chờ'),
+  createData(6, '11-03-2021', '8h - 9h', '0123456789', 'Spa', 'Đang Chờ'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -50,13 +60,16 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'Employee Name' },
-  { id: 'position', numeric: true, disablePadding: false, label: 'Position' },
-  { id: 'status', numeric: true, disablePadding: false, label: 'status' },
+  { id: 'id', numeric: true, disablePadding: false, label: 'ID' },
+  { id: 'date', numeric: false, disablePadding: false, label: 'Service Name' },
+  { id: 'schedule', numeric: false, disablePadding: false, label: 'Schedule' },
+  { id: 'phone', numeric: false, disablePadding: false, label: 'Phone' },
+  { id: 'category', numeric: false, disablePadding: false, label: 'Category' },
+  { id: 'status', numeric: false, disablePadding: false, label: 'Status' },
 ];
 
 function EnhancedTableHead(props) {
-  const { classes, order, orderBy, onRequestSort } = props;
+  const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -64,13 +77,18 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell >
-         
+        <TableCell padding="checkbox">
+          <Checkbox
+            indeterminate={numSelected > 0 && numSelected < rowCount}
+            checked={rowCount > 0 && numSelected === rowCount}
+            onChange={onSelectAllClick}
+            inputProps={{ 'aria-label': 'select all desserts' }}
+          />
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
+            align='center'
             padding={headCell.disablePadding ? 'none' : 'default'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -88,8 +106,8 @@ function EnhancedTableHead(props) {
             </TableSortLabel>
           </TableCell>
         ))}
-        <TableCell padding="text" align='left'>
-                Edit Information
+        <TableCell align="center">
+          View Detail
         </TableCell>
       </TableRow>
     </TableHead>
@@ -125,12 +143,12 @@ const EnhancedTableToolbar = (props) => {
       })}
     >
       {numSelected > 0 ? (
-        <Typography  className={classes.title} color="inherit" variant="subtitle1" component="div">
+        <Typography className={classes.title} color="inherit" variant="subtitle1" component="div">
           {numSelected} selected
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-          Employee List
+          Nutrition
         </Typography>
       )}
 
@@ -141,6 +159,11 @@ const EnhancedTableToolbar = (props) => {
           </IconButton>
         </Tooltip>
       ) : (
+        // <Tooltip title="Filter list">
+        //   <IconButton aria-label="filter list">
+        //     <FilterListIcon />
+        //   </IconButton>
+        // </Tooltip>
         <div></div>
       )}
     </Toolbar>
@@ -182,7 +205,7 @@ export default function EnhancedTable() {
   const classes = useStyles({ theme });
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
-  const [selected] = React.useState([]);
+  const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -193,7 +216,34 @@ export default function EnhancedTable() {
     setOrderBy(property);
   };
 
+  const handleSelectAllClick = (event) => {
+    if (event.target.checked) {
+      const newSelecteds = rows.map((n) => n.name);
+      setSelected(newSelecteds);
+      return;
+    }
+    setSelected([]);
+  };
 
+  const handleClick = (event, name) => {
+    const selectedIndex = selected.indexOf(name);
+    let newSelected = [];
+
+    if (selectedIndex === -1) {
+      newSelected = newSelected.concat(selected, name);
+    } else if (selectedIndex === 0) {
+      newSelected = newSelected.concat(selected.slice(1));
+    } else if (selectedIndex === selected.length - 1) {
+      newSelected = newSelected.concat(selected.slice(0, -1));
+    } else if (selectedIndex > 0) {
+      newSelected = newSelected.concat(
+        selected.slice(0, selectedIndex),
+        selected.slice(selectedIndex + 1),
+      );
+    }
+
+    setSelected(newSelected);
+  };
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -208,12 +258,41 @@ export default function EnhancedTable() {
     setDense(event.target.checked);
   };
 
+  const [alignment, setAlignment] = React.useState('left');
+
+  // const handleAlignment = (event, newAlignment) => {
+  //   setAlignment(newAlignment);
+  // };
+
+  const isSelected = (name) => selected.indexOf(name) !== -1;
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
+        <Box pt={3} mr={2} display="flex" justifyContent="flex-end">  
+          <ToggleButtonGroup
+            value={alignment}
+            exclusive
+            // onChange={handleAlignment}
+            aria-label="text alignment"
+          >
+            <ToggleButton value="left" aria-label="left aligned" disable>
+              Đang Chờ
+      </ToggleButton>
+            <ToggleButton value="center" aria-label="centered" disable>
+              Đang Tiến Hành
+      </ToggleButton>
+            <ToggleButton value="right" aria-label="right aligned" disable>
+              Đã Hoàn Thành
+      </ToggleButton>
+            <ToggleButton value="justify" aria-label="justified" disable>
+              Đã Huỷ
+      </ToggleButton>
+          </ToggleButtonGroup>
+
+        </Box>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
@@ -227,6 +306,7 @@ export default function EnhancedTable() {
               numSelected={selected.length}
               order={order}
               orderBy={orderBy}
+              onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
             />
@@ -234,24 +314,36 @@ export default function EnhancedTable() {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
+                  const isItemSelected = isSelected(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
+                      hover
+                      onClick={(event) => handleClick(event, row.name)}
+                      role="checkbox"
+                      aria-checked={isItemSelected}
+                      tabIndex={-1}
+                      key={row.name}
+                      selected={isItemSelected}
+
                     >
-                      <TableCell padding="checkbox">
+                      <TableCell padding="checkbox" align="center">
+                        <Checkbox
+                          checked={isItemSelected}
+                          inputProps={{ 'aria-labelledby': labelId }}
+                        />
                       </TableCell>
-                      <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                      <TableCell id={labelId} align="center">
+                        {row.id}
                       </TableCell>
-                      <TableCell align="right">{row.position}</TableCell>
-                      <TableCell align="right">{row.status}</TableCell>
-                      <TableCell align="left">
-                        <Link component="button" variant="body2"
-                        className={classes.linkPadding}
-                        > Edit </Link>
-                        <Link  component="button" variant="body2" to='/employee/employeeDetail'  > 
-                        {VNLABELS.LABEL_LINK_BUTTON_VIEW_DETAIL} </Link>
+                      <TableCell align="center">{row.date}</TableCell>
+                      <TableCell align="center">{row.phone}</TableCell>
+                      <TableCell align="center">{row.schedule}</TableCell>
+                      <TableCell align="center">{row.category}</TableCell>
+                      <TableCell align="center">{row.status}</TableCell>
+                      <TableCell align="center">
+                        <Link to="/serviceCatalog/serviceDetail" variant="body2" > View</Link>
                       </TableCell>
                     </TableRow>
                   );
